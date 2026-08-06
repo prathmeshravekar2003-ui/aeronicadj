@@ -1,0 +1,920 @@
+{% load static %}
+<div class="navbar {{ navbar_class|default:'is-scrolled' }}" id="navbar">
+
+    <div class="navbar-container">
+
+      <a class="navbar-logo" aria-label="Aeronica" href="/">
+
+        <img alt="Aeronica Logo" loading="lazy" width="160" height="64" decoding="async" class="navbar-logo-img"
+
+          src="{% static 'main/Logo.svg' %}" />
+
+      </a>
+
+      <nav class="navbar-menu" id="navbarMenu">
+
+        <a class="navbar-link{% if request.path == '/' %} active{% endif %}" href="/">Home</a>
+
+        <div class="navbar-dropdown">
+
+          <a class="navbar-link navbar-dropdown-trigger{% if '/about/' in request.path %} active{% endif %}" href="/about/">About<svg xmlns="http://www.w3.org/2000/svg"
+
+              width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+
+              stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"
+
+              style="width:1.4rem;height:1.4rem;margin-left:0.2rem">
+
+              <path d="m6 9 6 6 6-6">
+
+              </path>
+
+            </svg>
+
+          </a>
+
+          <div class="navbar-dropdown-menu ">
+
+            <div class="navbar-dropdown-grid">
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Company</span>
+
+                <a class="navbar-dropdown-link" href="/about/">About Aeronica</a>
+
+                <a class="navbar-dropdown-link" href="/about/why-aeronica/">Why Aeronica</a>
+
+                <a class="navbar-dropdown-link" href="/about/careers/">Careers</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Our People</span>
+
+                <a class="navbar-dropdown-link" href="/about/leadership-team/">Leadership Team</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Capabilities</span>
+
+                <a class="navbar-dropdown-link" href="/about/technology-stack/">Technology Stack</a>
+
+                <a class="navbar-dropdown-link" href="/about/certifications/">Certifications</a>
+
+                <a class="navbar-dropdown-link" href="/about/partners-alliances/">Partners &amp; Alliances</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="navbar-dropdown">
+
+          <a class="navbar-link navbar-dropdown-trigger{% if '/products/' in request.path %} active{% endif %}" href="/products/">Products<svg
+
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+              class="lucide lucide-chevron-down" style="width:1.4rem;height:1.4rem;margin-left:0.2rem">
+
+              <path d="m6 9 6 6 6-6">
+
+              </path>
+
+            </svg>
+
+          </a>
+
+          <div class="navbar-dropdown-menu ">
+
+            <div class="navbar-dropdown-grid">
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Agricultural UAVs</span>
+
+                <a class="navbar-dropdown-link" href="/products/samrudhhi-10lh/">Samrudhhi-10LH</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Survey &amp; Mapping</span>
+
+                <a class="navbar-dropdown-link" href="/products/flycra-20/">Flycra 2.0</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Avionics</span>
+
+                <a class="navbar-dropdown-link" href="/products/nitya-fc/">Nitya FC</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Surveillance</span>
+
+                <a class="navbar-dropdown-link" href="/products/flyura/">Flyura</a>
+
+                <a class="navbar-dropdown-link" href="/products/uday-16/">Uday 1.6</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="navbar-dropdown">
+
+          <a class="navbar-link navbar-dropdown-trigger{% if '/solutions/' in request.path %} active{% endif %}" href="/solutions/">Solutions<svg
+
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+              class="lucide lucide-chevron-down" style="width:1.4rem;height:1.4rem;margin-left:0.2rem">
+
+              <path d="m6 9 6 6 6-6">
+
+              </path>
+
+            </svg>
+
+          </a>
+
+          <div class="navbar-dropdown-menu ">
+
+            <div class="navbar-dropdown-grid">
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Survey &amp; Mapping</span>
+
+                <a class="navbar-dropdown-link" href="/solutions/drone-survey-mapping/">Drone Survey &amp;
+
+                  Mapping</a>
+
+                <a class="navbar-dropdown-link" href="/solutions/gis-geospatial-intelligence/">GIS &amp; Geospatial
+
+                  Intelligence</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Industry Applications</span>
+
+                <a class="navbar-dropdown-link" href="/solutions/infrastructure-inspection/">Infrastructure
+
+                  Inspection</a>
+
+                <a class="navbar-dropdown-link" href="/solutions/disaster-emergency-response/">Disaster &amp;
+
+                  Emergency Response</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Technology</span>
+
+                <a class="navbar-dropdown-link" href="/solutions/ai-drone-intelligence/">AI Drone Intelligence</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="navbar-dropdown">
+
+          <a class="navbar-link navbar-dropdown-trigger{% if '/industries/' in request.path %} active{% endif %}" href="/industries/">Industries<svg
+
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+              class="lucide lucide-chevron-down" style="width:1.4rem;height:1.4rem;margin-left:0.2rem">
+
+              <path d="m6 9 6 6 6-6">
+
+              </path>
+
+            </svg>
+
+          </a>
+
+          <div class="navbar-dropdown-menu ">
+
+            <div class="navbar-dropdown-grid">
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Industrial &amp; Energy</span>
+
+                <a class="navbar-dropdown-link" href="/industries/mining/">Mining &amp; Volumetric Analysis</a>
+
+                <a class="navbar-dropdown-link" href="/industries/energy/">Energy &amp; Renewable Power</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Infrastructure</span>
+
+                <a class="navbar-dropdown-link" href="/industries/construction/">Construction &amp;
+
+                  Infrastructure</a>
+
+                <a class="navbar-dropdown-link" href="/industries/utilities/">Utilities &amp; Grid Management</a>
+
+                <a class="navbar-dropdown-link" href="/industries/transportation/">Transportation &amp; Logistics</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Public Sector &amp; Urban</span>
+
+                <a class="navbar-dropdown-link" href="/industries/government/">Government &amp; Public Sector</a>
+
+                <a class="navbar-dropdown-link" href="/industries/smart-cities/">Smart Cities &amp; Urban Dev.</a>
+
+                <a class="navbar-dropdown-link" href="/industries/agriculture/">Agriculture &amp; Precision
+
+                  Farming</a>
+
+                <a class="navbar-dropdown-link" href="/industries/telecom/">Telecommunications</a>
+
+                <a class="navbar-dropdown-link" href="/industries/real-estate/">Real Estate &amp; Property</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="navbar-dropdown">
+
+          <a class="navbar-link navbar-dropdown-trigger{% if '/case-studies/' in request.path %} active{% endif %}" href="/case-studies/">Case Studies<svg
+
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+              class="lucide lucide-chevron-down" style="width:1.4rem;height:1.4rem;margin-left:0.2rem">
+
+              <path d="m6 9 6 6 6-6">
+
+              </path>
+
+            </svg>
+
+          </a>
+
+          <div class="navbar-dropdown-menu ">
+
+            <div class="navbar-dropdown-grid">
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">By Sector</span>
+
+                <a class="navbar-dropdown-link" href="/case-studies/government-projects/">Government Projects</a>
+
+                <a class="navbar-dropdown-link" href="/case-studies/infrastructure-projects/">Infrastructure
+
+                  Projects</a>
+
+                <a class="navbar-dropdown-link" href="/case-studies/agriculture-projects/">Agriculture Projects</a>
+
+                <a class="navbar-dropdown-link" href="/case-studies/mining-projects/">Mining Projects</a>
+
+                <a class="navbar-dropdown-link" href="/case-studies/utility-projects/">Utility Projects</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Featured</span>
+
+                <a class="navbar-dropdown-link" href="/case-studies/smart-city-projects/">Smart City Projects</a>
+
+                <a class="navbar-dropdown-link" href="/case-studies/locust-control-maharashtra/">Locust Control —
+
+                  Maharashtra</a>
+
+                <a class="navbar-dropdown-link" href="/case-studies/project-gallery/">Project Gallery</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="navbar-dropdown">
+
+          <a class="navbar-link navbar-dropdown-trigger{% if '/resources/' in request.path %} active{% endif %}" href="/resources/">Resources<svg
+
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+              class="lucide lucide-chevron-down" style="width:1.4rem;height:1.4rem;margin-left:0.2rem">
+
+              <path d="m6 9 6 6 6-6">
+
+              </path>
+
+            </svg>
+
+          </a>
+
+          <div class="navbar-dropdown-menu ">
+
+            <div class="navbar-dropdown-grid">
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Content</span>
+
+                <a class="navbar-dropdown-link" href="/resources/blog/">Blog</a>
+
+                <a class="navbar-dropdown-link" href="/resources/whitepapers/">Whitepapers</a>
+
+                <a class="navbar-dropdown-link" href="/resources/news-media/">News &amp; Media</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Support</span>
+
+                <a class="navbar-dropdown-link" href="/resources/faqs/">FAQs</a>
+
+                <!-- <a class="navbar-dropdown-link" href="/resources/downloads/">Downloads</a>    -->
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Research</span>
+
+                <a class="navbar-dropdown-link" href="/research/">Research &amp; R&amp;D</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+      <div class="navbar-actions">
+
+        <a class="navbar-partner-link" href="/partners/become/">Become a Partner</a>
+
+        <div class="navbar-dropdown">
+
+          <a class="navbar-cta-button " href="/contact/">
+
+            <span>Contact</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+              class="lucide lucide-chevron-down navbar-cta-chevron"
+
+              style="width:1.3rem;height:1.3rem;margin-left:0.2rem">
+
+              <path d="m6 9 6 6 6-6">
+
+              </path>
+
+            </svg>
+
+          </a>
+
+          <div class="navbar-dropdown-menu navbar-contact-dropdown " style="right:0;left:auto">
+
+            <div class="navbar-dropdown-grid">
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Get Started</span>
+
+                <a class="navbar-dropdown-link" href="/contact/request-demo/">Request a Demo</a>
+
+                <a class="navbar-dropdown-link" href="/contact/get-quote/">Get a Quote</a>
+
+                <a class="navbar-dropdown-link" href="/contact/book-consultation/">Book Consultation</a>
+
+              </div>
+
+              <div class="navbar-dropdown-col">
+
+                <span class="navbar-dropdown-heading">Connect</span>
+
+                <a class="navbar-dropdown-link" href="/contact/">Contact Us</a>
+
+                <a class="navbar-dropdown-link" href="/contact/office-locations/">Office Locations</a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <button class="navbar-toggle " aria-label="Toggle menu">
+
+          <span>
+
+          </span>
+
+          <span>
+
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="nav-overlay " id="navOverlay">
+
+    <nav class="nav-overlay-menu">
+
+      <a class="nav-overlay-link{% if request.path == '/' %} active{% endif %}" href="/">Home</a>
+
+      <div class="nav-overlay-group">
+
+        <button class="nav-overlay-group-trigger{% if '/about/' in request.path %} active{% endif %}">About<!-- -->
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+            class="lucide lucide-chevron-down" style="width:2rem;height:2rem">
+
+            <path d="m6 9 6 6 6-6">
+
+            </path>
+
+          </svg>
+
+        </button>
+
+        <div class="nav-overlay-sublinks ">
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Company</span>
+
+            <a class="nav-overlay-sublink" href="/about/">About Aeronica</a>
+
+            <a class="nav-overlay-sublink" href="/about/why-aeronica/">Why Aeronica</a>
+
+            <a class="nav-overlay-sublink" href="/about/careers/">Careers</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Our People</span>
+
+            <a class="nav-overlay-sublink" href="/about/leadership-team/">Leadership Team</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Capabilities</span>
+
+            <a class="nav-overlay-sublink" href="/about/technology-stack/">Technology Stack</a>
+
+            <a class="nav-overlay-sublink" href="/about/certifications/">Certifications</a>
+
+            <a class="nav-overlay-sublink" href="/about/partners-alliances/">Partners &amp; Alliances</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nav-overlay-group">
+
+        <button class="nav-overlay-group-trigger{% if '/products/' in request.path %} active{% endif %}">Products<!-- -->
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+            class="lucide lucide-chevron-down" style="width:2rem;height:2rem">
+
+            <path d="m6 9 6 6 6-6">
+
+            </path>
+
+          </svg>
+
+        </button>
+
+        <div class="nav-overlay-sublinks ">
+
+          <a class="nav-overlay-sublink nav-overlay-sublink-all" href="/products/">All <!-- -->Products</a>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Agricultural UAVs</span>
+
+            <a class="nav-overlay-sublink" href="/products/samrudhhi-10lh/">Samrudhhi-10LH</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Survey &amp; Mapping</span>
+
+            <a class="nav-overlay-sublink" href="/products/flycra-20/">Flycra 2.0</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Avionics</span>
+
+            <a class="nav-overlay-sublink" href="/products/nitya-fc/">Nitya FC</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Surveillance</span>
+
+            <a class="nav-overlay-sublink" href="/products/flyura/">Flyura</a>
+
+            <a class="nav-overlay-sublink" href="/products/uday-16/">Uday 1.6</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nav-overlay-group">
+
+        <button class="nav-overlay-group-trigger{% if '/solutions/' in request.path %} active{% endif %}">Solutions<!-- -->
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+            class="lucide lucide-chevron-down" style="width:2rem;height:2rem">
+
+            <path d="m6 9 6 6 6-6">
+
+            </path>
+
+          </svg>
+
+        </button>
+
+        <div class="nav-overlay-sublinks ">
+
+          <a class="nav-overlay-sublink nav-overlay-sublink-all" href="/solutions/">All <!-- -->Solutions</a>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Survey &amp; Mapping</span>
+
+            <a class="nav-overlay-sublink" href="/solutions/drone-survey-mapping/">Drone Survey &amp; Mapping</a>
+
+            <a class="nav-overlay-sublink" href="/solutions/gis-geospatial-intelligence/">GIS &amp; Geospatial
+
+              Intelligence</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Industry Applications</span>
+
+            <a class="nav-overlay-sublink" href="/solutions/infrastructure-inspection/">Infrastructure Inspection</a>
+
+            <a class="nav-overlay-sublink" href="/solutions/disaster-emergency-response/">Disaster &amp; Emergency
+
+              Response</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Technology</span>
+
+            <a class="nav-overlay-sublink" href="/solutions/ai-drone-intelligence/">AI Drone Intelligence</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nav-overlay-group">
+
+        <button class="nav-overlay-group-trigger{% if '/industries/' in request.path %} active{% endif %}">Industries<!-- -->
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+            class="lucide lucide-chevron-down" style="width:2rem;height:2rem">
+
+            <path d="m6 9 6 6 6-6">
+
+            </path>
+
+          </svg>
+
+        </button>
+
+        <div class="nav-overlay-sublinks ">
+
+          <a class="nav-overlay-sublink nav-overlay-sublink-all" href="/industries/">All <!-- -->Industries</a>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Industrial &amp; Energy</span>
+
+            <a class="nav-overlay-sublink" href="/industries/mining/">Mining &amp; Volumetric Analysis</a>
+
+            <a class="nav-overlay-sublink" href="/industries/energy/">Energy &amp; Renewable Power</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Infrastructure</span>
+
+            <a class="nav-overlay-sublink" href="/industries/construction/">Construction &amp; Infrastructure</a>
+
+            <a class="nav-overlay-sublink" href="/industries/utilities/">Utilities &amp; Grid Management</a>
+
+            <a class="nav-overlay-sublink" href="/industries/transportation/">Transportation &amp; Logistics</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Public Sector &amp; Urban</span>
+
+            <a class="nav-overlay-sublink" href="/industries/government/">Government &amp; Public Sector</a>
+
+            <a class="nav-overlay-sublink" href="/industries/smart-cities/">Smart Cities &amp; Urban Dev.</a>
+
+            <a class="nav-overlay-sublink" href="/industries/agriculture/">Agriculture &amp; Precision Farming</a>
+
+            <a class="nav-overlay-sublink" href="/industries/telecom/">Telecommunications</a>
+
+            <a class="nav-overlay-sublink" href="/industries/real-estate/">Real Estate &amp; Property</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nav-overlay-group">
+
+        <button class="nav-overlay-group-trigger{% if '/case-studies/' in request.path %} active{% endif %}">Case Studies<!-- -->
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+            class="lucide lucide-chevron-down" style="width:2rem;height:2rem">
+
+            <path d="m6 9 6 6 6-6">
+
+            </path>
+
+          </svg>
+
+        </button>
+
+        <div class="nav-overlay-sublinks ">
+
+          <a class="nav-overlay-sublink nav-overlay-sublink-all" href="/case-studies/">All <!-- -->Case Studies</a>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">By Sector</span>
+
+            <a class="nav-overlay-sublink" href="/case-studies/government-projects/">Government Projects</a>
+
+            <a class="nav-overlay-sublink" href="/case-studies/infrastructure-projects/">Infrastructure Projects</a>
+
+            <a class="nav-overlay-sublink" href="/case-studies/agriculture-projects/">Agriculture Projects</a>
+
+            <a class="nav-overlay-sublink" href="/case-studies/mining-projects/">Mining Projects</a>
+
+            <a class="nav-overlay-sublink" href="/case-studies/utility-projects/">Utility Projects</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Featured</span>
+
+            <a class="nav-overlay-sublink" href="/case-studies/smart-city-projects/">Smart City Projects</a>
+
+            <a class="nav-overlay-sublink" href="/case-studies/locust-control-maharashtra/">Locust Control —
+
+              Maharashtra</a>
+
+            <a class="nav-overlay-sublink" href="/case-studies/project-gallery/">Project Gallery</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nav-overlay-group">
+
+        <button class="nav-overlay-group-trigger{% if '/resources/' in request.path %} active{% endif %}">Resources<!-- -->
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+
+            class="lucide lucide-chevron-down" style="width:2rem;height:2rem">
+
+            <path d="m6 9 6 6 6-6">
+
+            </path>
+
+          </svg>
+
+        </button>
+
+        <div class="nav-overlay-sublinks ">
+
+          <a class="nav-overlay-sublink nav-overlay-sublink-all" href="/resources/">All <!-- -->Resources</a>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Content</span>
+
+            <a class="nav-overlay-sublink" href="/resources/blog/">Blog</a>
+
+            <a class="nav-overlay-sublink" href="/resources/whitepapers/">Whitepapers</a>
+
+            <a class="nav-overlay-sublink" href="/resources/news-media/">News &amp; Media</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Support</span>
+
+            <a class="nav-overlay-sublink" href="/resources/faqs/">FAQs</a>
+
+            <a class="nav-overlay-sublink" href="/resources/downloads/">Downloads</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Research</span>
+
+            <a class="nav-overlay-sublink" href="/research/">Research &amp; R&amp;D</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nav-overlay-group">
+
+        <button class="nav-overlay-group-trigger{% if '/contact/' in request.path %} active{% endif %}">Contact <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+
+            stroke-linejoin="round" class="lucide lucide-chevron-down" style="width:2rem;height:2rem">
+
+            <path d="m6 9 6 6 6-6">
+
+            </path>
+
+          </svg>
+
+        </button>
+
+        <div class="nav-overlay-sublinks ">
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Get Started</span>
+
+            <a class="nav-overlay-sublink" href="/contact/request-demo/">Request a Demo</a>
+
+            <a class="nav-overlay-sublink" href="/contact/get-quote/">Get a Quote</a>
+
+            <a class="nav-overlay-sublink" href="/contact/book-consultation/">Book Consultation</a>
+
+          </div>
+
+          <div class="nav-overlay-subgroup">
+
+            <span class="nav-overlay-subheading">Connect</span>
+
+            <a class="nav-overlay-sublink" href="/contact/">Contact Us</a>
+
+            <a class="nav-overlay-sublink" href="/contact/office-locations/">Office Locations</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nav-overlay-cta-group">
+
+        <a class="nav-overlay-cta-contact" href="/partners/become/">Become a Partner <svg viewBox="0 0 24 24"
+
+            fill="currentColor" width="14" height="14" style="transform:rotate(0deg)">
+
+            <circle cx="5" cy="2" r="1.3">
+
+            </circle>
+
+            <circle cx="8.5" cy="4.5" r="1.3">
+
+            </circle>
+
+            <circle cx="12" cy="7" r="1.3">
+
+            </circle>
+
+            <circle cx="15.5" cy="9.5" r="1.3">
+
+            </circle>
+
+            <circle cx="19" cy="12" r="1.3">
+
+            </circle>
+
+            <circle cx="15.5" cy="14.5" r="1.3">
+
+            </circle>
+
+            <circle cx="12" cy="17" r="1.3">
+
+            </circle>
+
+            <circle cx="8.5" cy="19.5" r="1.3">
+
+            </circle>
+
+            <circle cx="5" cy="22" r="1.3">
+
+            </circle>
+
+          </svg>
+
+        </a>
+
+      </div>
+
+    </nav>
+
+  </div>

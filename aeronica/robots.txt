@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas (adjust if needed)
+Disallow: /seo/
+
+# Sitemap location — update YOUR_DOMAIN with actual domain after deployment
+Sitemap: https://aeronica.in/sitemap.xml
