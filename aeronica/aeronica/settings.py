@@ -130,16 +130,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Additional static files directories (project-level)
+# Additional static files directories — only include directories that actually exist
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    d for d in [BASE_DIR / 'static'] if d.exists()
 ]
 
 # Directory where collectstatic gathers all files for production
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# WhiteNoise: serve compressed & cached static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# WhiteNoise: serve compressed static files (no manifest — avoids stale hash issues)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
