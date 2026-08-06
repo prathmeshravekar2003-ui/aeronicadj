@@ -2,14 +2,25 @@
   "version": 2,
   "builds": [
     {
+      "src": "aeronica/staticfiles/**",
+      "use": "@vercel/static"
+    },
+    {
       "src": "aeronica/aeronica/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "100mb"
+        "maxLambdaSize": "15mb"
       }
     }
   ],
   "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/aeronica/staticfiles/$1",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
     {
       "src": "/(.*)",
       "dest": "aeronica/aeronica/wsgi.py"
