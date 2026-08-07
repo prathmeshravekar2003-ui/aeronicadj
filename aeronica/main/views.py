@@ -1,6 +1,10 @@
+import json
+
+from django.urls import reverse
 from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.template.loader import render_to_string
+from django.templatetags.static import static as resolve_static
 
 
 # ── Error pages ──────────────────────────────────────────────────────────────
@@ -78,6 +82,124 @@ class ContactRequestDemoView(TemplateView):
 
 class IndexView(TemplateView):
     template_name = 'main/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['hero_slides'] = json.dumps([
+            {
+                "image": resolve_static('main/images/Hero-Section/Sam 10LH website image 2.png'),
+                "title": "Samrudhhi 10LH",
+                "description": "Improve farm productivity with the Samrudhhi-10LH agriculture spraying drone. Designed for efficient pesticide and nutrient application across different crops.",
+                "ctaLabel": "Get in Touch",
+                "ctaHref": reverse('main:contact'),
+            },
+            {
+                "image": resolve_static('main/images/Website Hero Images/Flycra 2.0 Hero img.png'),
+                "title": "Flycra 2.0",
+                "description": "Flycra 2.0 helps capture accurate aerial data for mapping, inspections, surveying, and surveillance across industrial and commercial projects.",
+                "ctaLabel": "View Products",
+                "ctaHref": reverse('main:products-flycra-20'),
+            },
+            {
+                "image": resolve_static('main/images/Website Hero Images/Flyura drone.png'),
+                "title": "Flyura",
+                "description": "Flyura is designed for surveillance across defence and critical infrastructure. Equipped with EO/IR imaging, laser rangefinder, and AI target detection.",
+                "ctaLabel": "Learn More",
+                "ctaHref": reverse('main:products-flyura'),
+            },
+            {
+                "image": resolve_static('main/images/Website Hero Images/Uday 1.6 (2).png'),
+                "title": "Uday 1.6",
+                "description": "UDAY 1.6 compact surveillance and intelligent drone. High-resolution aerial imaging and coverage for defence operations, border security, and infrastructure assessment.",
+                "ctaLabel": "Contact Us",
+                "ctaHref": reverse('main:contact'),
+            },
+        ])
+        context['product_slides'] = [
+            {
+                "title": "Samrudhhi-10LH",
+                "tagline": "Heavy Lift Hybrid",
+                "description": "Built for large-scale farming operations that demand more from every pass. Effective spraying with wider crop coverage to treat more acreage in less time.",
+                "image": resolve_static('main/images/products/Sam_10LH/SAM_10LH.png'),
+                "href": reverse('main:products-samrudhhi-10lh'),
+                "specs": [
+                    {"value": "31.5 Kg", "label": "MTOW"},
+                    {"value": "10 L", "label": "Tank Capacity"},
+                    {"value": "24 min", "label": "Flight Time"},
+                ],
+            },
+            {
+                "title": "Flycra 2.0",
+                "tagline": "Fixed-Wing Survey UAV",
+                "description": "Aeronica's precision survey and mapping platform - a compact, high-endurance fixed-wing UAV for GIS surveys, corridor mapping, and volumetric analysis.",
+                "image": resolve_static('main/images/products/Flycra 2.0/Flycra 2.0 (front view).png'),
+                "href": reverse('main:products-flycra-20'),
+                "specs": [
+                    {"value": "2.4 Kg", "label": "MTOW"},
+                    {"value": "50 min", "label": "Flight Time"},
+                    {"value": "36 km/h", "label": "Cruise Speed"},
+                ],
+            },
+            {
+                "title": "Nitya FC",
+                "tagline": "Flight Controller & Avionics",
+                "description": "Aeronica's fully indigenous flight controller, built from 4 years of embedded systems R&D. It delivers a fully modular, indigenous avionics stack.",
+                "image": resolve_static('main/images/products/nitya-fc/Nitya FC.png'),
+                "href": reverse('main:products-nitya-fc'),
+                "specs": [
+                    {"value": "480 MHz", "label": "Processor"},
+                    {"value": "3x IMU", "label": "Redundant Sensors"},
+                    {"value": "5V-36V", "label": "Power Range"},
+                ],
+            },
+            {
+                "title": "Flyura",
+                "tagline": "Surveillance UAV",
+                "description": "When every second matters, Flyura delivers real-time aerial intelligence for defence, surveillance, and critical infrastructure security missions.",
+                "image": resolve_static('main/images/products/Flyura images/ChatGPT Image Jul 24, 2026, 11_48_49 AM.png'),
+                "href": reverse('main:products-flyura'),
+                "specs": [
+                    {"value": "25 km", "label": "Operational Range"},
+                    {"value": "15 Kg", "label": "MTOW"},
+                    {"value": "120 min", "label": "Flight Time"},
+                ],
+            },
+            {
+                "title": "Uday 1.6",
+                "tagline": "Tactical Surveillance",
+                "description": "Compact, lightweight, and mission-ready tactical quadcopter for rapid deployment, real-time reconnaissance, and reliable aerial surveillance.",
+                "image": resolve_static('main/images/products/Uday 1.6/P3 uday.png'),
+                "href": reverse('main:products-uday-16'),
+                "specs": [
+                    {"value": "30 min", "label": "Flight Time"},
+                    {"value": "1.6 kg", "label": "MTOW"},
+                    {"value": "150 g", "label": "Payload"},
+                ],
+            },
+        ]
+        context['testimonials'] = [
+            {
+                "quote": "Aeronica delivered exceptional precision in their GIS mapping for our railway corridor project. The sub-centimeter accuracy and detailed terrain analysis exceeded our expectations.",
+                "name": "Chief Engineer",
+                "role": "Central Railway",
+            },
+            {
+                "quote": "The volumetric analysis from Aeronica's mine survey gave us stockpile numbers we could rely on for planning and reconciliation — far more consistent than our manual methods.",
+                "name": "Survey Head",
+                "role": "JSW Steel",
+            },
+            {
+                "quote": "Aeronica's pipeline surveillance drones monitored our right-of-way continuously and flagged anomalies in real time, protecting critical infrastructure with minimal ground patrols.",
+                "name": "Operations Director",
+                "role": "IOCL",
+            },
+            {
+                "quote": "From crop health mapping to spraying operations, Aeronica's agriculture drones have measurably improved how our farmers manage fields and input costs.",
+                "name": "Programme Lead",
+                "role": "Agriculture Department",
+            },
+        ]
+        return context
 
 class IndustriesView(TemplateView):
     template_name = 'main/industries.html'

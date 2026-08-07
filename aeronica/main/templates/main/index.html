@@ -15,7 +15,7 @@
 
   <link rel="preload" as="image" href="{% static 'main/images/Hero-Section/Sam 10LH website image 2.png' %}" />
 
-  <link rel="preload" as="image" href="{% static 'main/images/products/Sam%2010-LH%20(Product%20Image)/SAM%2010LH.png' %}" />
+  <link rel="preload" as="image" href="{% static 'main/images/products/Sam_10LH/SAM_10LH.png' %}" />
 
   <link rel="preload" as="image" href="{% static 'main/img/client logos/basf.jpg' %}" />
 
@@ -54,7 +54,6 @@
   <title>Aeronica — Drones, built with Purpose! Flying with Precision!</title>
 
   <meta name="description"
-
     content="Aeronica Advance Technologies — indigenous drone solutions for agriculture, GIS, surveillance, and industrial applications. DGCA certified." />
 
   <link rel="icon" href="{% static 'main/Favicon.svg' %}" />
@@ -85,31 +84,16 @@
     <!-- Hero Carousel -->
 
     <section id="hero"
-
       style="position:relative;min-height:100vh;max-height:1080px;display:flex;align-items:center;overflow:hidden;background:#21389A"
-
-      data-hero-slides='[
-
-    {"image":"{% static 'main/images/Hero-Section/Sam 10LH website image 2.png' %}","title":"Samrudhhi 10LH","description":"Improve farm productivity with the Samrudhhi-10LH agriculture spraying drone. Designed for efficient pesticide and nutrient application across different crops.","ctaLabel":"Get in Touch","ctaHref":"contact.html"},
-
-    {"image":"{% static 'main/images/Website Hero Images/Flycra 2.0 Hero img.png' %}","title":"Flycra 2.0","description":"Flycra 2.0 helps capture accurate aerial data for mapping, inspections, surveying, and surveillance across industrial and commercial projects.","ctaLabel":"View Products","ctaHref":"products/flycra-20.html"},
-
-    {"image":"{% static 'main/images/Website Hero Images/Flyura drone.png' %}","title":"Flyura","description":"Flyura is designed for surveillance across defence and critical infrastructure. Equipped with EO/IR imaging, laser rangefinder, and AI target detection.","ctaLabel":"Learn More","ctaHref":"products/flyura.html"},
-
-    {"image":"{% static 'main/images/Website Hero Images/Uday 1.6 (2).png' %}","title":"Uday 1.6","description":"UDAY 1.6 compact surveillance and reconnaissance drone. High-resolution aerial imaging capabilities for defence operations, border security, and critical infrastructure assessment.","ctaLabel":"Contact Us","ctaHref":"contact.html"}
-
-  ]'>
+      data-hero-slides='{{ hero_slides }}'>
 
       <!-- Background layer (cross-fade pair) -->
 
       <div class="hero-bg-container" id="heroBgCurrent"
-
         style="position:absolute;inset:0;overflow:hidden;transition:opacity 0.7s ease;z-index:0">
 
         <img id="heroBgImgCurrent" alt=""
-
           style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;object-fit:cover"
-
           src="{% static 'main/images/Hero-Section/Sam 10LH website image 2.png' %}" />
 
         <div class="hero-bg-overlay"></div>
@@ -117,11 +101,9 @@
       </div>
 
       <div class="hero-bg-container" id="heroBgNext"
-
         style="position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity 0.7s ease;z-index:0">
 
         <img id="heroBgImgNext" alt=""
-
           style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;object-fit:cover" src="" />
 
         <div class="hero-bg-overlay"></div>
@@ -137,7 +119,6 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="transform:rotate(180deg)">
 
           <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
             stroke-linejoin="round"></path>
 
         </svg>
@@ -149,7 +130,6 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
 
           <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-
             stroke-linejoin="round"></path>
 
         </svg>
@@ -169,7 +149,7 @@
               with the Samrudhhi-10LH agriculture spraying drone. Designed for efficient pesticide and nutrient
               application across different crops.</p>
             <div class="hero-cta-wrap">
-              <a class="hero-cta" id="heroCta" href="contact.html" style="transition:opacity 0.4s ease">
+              <a class="hero-cta" id="heroCta" href="{% url 'main:contact' %}" style="transition:opacity 0.4s ease">
                 <span id="heroCtaLabel">Get in Touch</span>
                 <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
                   <circle cx="5" cy="2" r="1.3"></circle>
@@ -197,26 +177,28 @@
         <button type="button" aria-label="Go to slide 1" class="hero-control-item is-active" data-slide="0">
 
           <span class="hero-control-track"><span class="hero-control-fill"
-
               style="display:block;height:100%;background:#fff;transform-origin:left;transform:scaleX(0);transition:none"></span></span>
 
         </button>
 
         <button type="button" aria-label="Go to slide 2" class="hero-control-item" data-slide="1">
 
-          <span class="hero-control-track"></span>
+          <span class="hero-control-track"><span class="hero-control-fill"
+              style="display:block;height:100%;background:#fff;transform-origin:left;transform:scaleX(0);transition:none"></span></span>
 
         </button>
 
         <button type="button" aria-label="Go to slide 3" class="hero-control-item" data-slide="2">
 
-          <span class="hero-control-track"></span>
+          <span class="hero-control-track"><span class="hero-control-fill"
+              style="display:block;height:100%;background:#fff;transform-origin:left;transform:scaleX(0);transition:none"></span></span>
 
         </button>
 
         <button type="button" aria-label="Go to slide 4" class="hero-control-item" data-slide="3">
 
-          <span class="hero-control-track"></span>
+          <span class="hero-control-track"><span class="hero-control-fill"
+              style="display:block;height:100%;background:#fff;transform-origin:left;transform:scaleX(0);transition:none"></span></span>
 
         </button>
 
@@ -225,11 +207,9 @@
     </section>
 
     <section id="stats" class="dot-watermark section-py"
-
       style="background:#21389A;color:#fff;overflow:hidden;position:relative;padding-left:0;padding-right:0">
 
       <div
-
         style="max-width:160rem;margin:0 auto;padding-left:var(--section-px);padding-right:var(--section-px);position:relative">
 
         <div style="opacity:1;transform:none">
@@ -237,13 +217,11 @@
           <div style="text-align:center;margin-bottom:5rem">
 
             <span
-
               style="font-family:var(--font-mono);font-size:1.2rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7);font-weight:600;display:block;margin-bottom:1.2rem">Our
 
               Impact</span>
 
             <h2
-
               style="font-size:clamp(2.8rem, 4vw, 4rem);font-weight:600;letter-spacing:-0.03em;line-height:1.15;color:#fff">
 
               By the Numbers</h2>
@@ -261,7 +239,6 @@
               <div style="display:flex;align-items:baseline;justify-content:center;gap:0.15rem">
 
                 <span
-
                   style="font-size:clamp(3.2rem, 4vw, 4.8rem);font-weight:500;line-height:1;color:#fff;font-family:var(--font-mono);letter-spacing:-0.03em">
 
                   <span>355289</span>
@@ -269,13 +246,11 @@
                 </span>
 
                 <span
-
                   style="font-size:clamp(1.6rem, 2vw, 2.4rem);font-weight:300;color:rgba(255,255,255,0.5);line-height:1">+</span>
 
               </div>
 
               <div
-
                 style="font-size:1rem;color:rgba(255,255,255,0.6);font-weight:500;margin-top:0.6rem;letter-spacing:0.08em;font-family:var(--font-mono);text-transform:uppercase">
 
                 Area Scanned (Acres)</div>
@@ -291,7 +266,6 @@
               <div style="display:flex;align-items:baseline;justify-content:center;gap:0.15rem">
 
                 <span
-
                   style="font-size:clamp(3.2rem, 4vw, 4.8rem);font-weight:500;line-height:1;color:#fff;font-family:var(--font-mono);letter-spacing:-0.03em">
 
                   <span>23732</span>
@@ -299,13 +273,11 @@
                 </span>
 
                 <span
-
                   style="font-size:clamp(1.6rem, 2vw, 2.4rem);font-weight:300;color:rgba(255,255,255,0.5);line-height:1">+</span>
 
               </div>
 
               <div
-
                 style="font-size:1rem;color:rgba(255,255,255,0.6);font-weight:500;margin-top:0.6rem;letter-spacing:0.08em;font-family:var(--font-mono);text-transform:uppercase">
 
                 Area Sprayed (Acres)</div>
@@ -321,7 +293,6 @@
               <div style="display:flex;align-items:baseline;justify-content:center;gap:0.15rem">
 
                 <span
-
                   style="font-size:clamp(3.2rem, 4vw, 4.8rem);font-weight:500;line-height:1;color:#fff;font-family:var(--font-mono);letter-spacing:-0.03em">
 
                   <span>98</span>
@@ -329,13 +300,11 @@
                 </span>
 
                 <span
-
                   style="font-size:clamp(1.6rem, 2vw, 2.4rem);font-weight:300;color:rgba(255,255,255,0.5);line-height:1">%</span>
 
               </div>
 
               <div
-
                 style="font-size:1rem;color:rgba(255,255,255,0.6);font-weight:500;margin-top:0.6rem;letter-spacing:0.08em;font-family:var(--font-mono);text-transform:uppercase">
 
                 Mapping Accuracy</div>
@@ -351,7 +320,6 @@
               <div style="display:flex;align-items:baseline;justify-content:center;gap:0.15rem">
 
                 <span
-
                   style="font-size:clamp(3.2rem, 4vw, 4.8rem);font-weight:500;line-height:1;color:#fff;font-family:var(--font-mono);letter-spacing:-0.03em">
 
                   <span>1874</span>
@@ -359,13 +327,11 @@
                 </span>
 
                 <span
-
                   style="font-size:clamp(1.6rem, 2vw, 2.4rem);font-weight:300;color:rgba(255,255,255,0.5);line-height:1">+</span>
 
               </div>
 
               <div
-
                 style="font-size:1rem;color:rgba(255,255,255,0.6);font-weight:500;margin-top:0.6rem;letter-spacing:0.08em;font-family:var(--font-mono);text-transform:uppercase">
 
                 Clients</div>
@@ -385,7 +351,6 @@
       <div style="opacity:1;transform:none">
 
         <div
-
           style="max-width:160rem;margin:0 auto;padding:var(--section-py, 6rem) var(--section-px) 3rem;text-align:left">
 
           <span class="section-title" style="justify-content:flex-start">
@@ -395,7 +360,6 @@
             </span>Products</span>
 
           <h2
-
             style="font-size:clamp(2.8rem, 4vw, 4rem);font-weight:600;letter-spacing:-0.03em;margin-top:1.5rem;line-height:1.15">
 
             Our Platform Ecosystem</h2>
@@ -409,11 +373,9 @@
       </div>
 
       <div class="prod-viewport"
-
         style="position:relative;overflow:hidden;background:#fff;padding:2.4rem 2rem 2rem;min-height:min(78vh, 66rem);display:flex;flex-direction:column;align-items:center;justify-content:center;border-top:1px solid #e5e5e5">
 
         <button disabled="" class="prod-nav-arrow prod-nav-arrow-left"
-
           style="position:absolute;left:var(--section-px);top:50%;transform:translateY(-50%);z-index:10;width:3.6rem;height:3.6rem;border-radius:50%;border:1px solid #e5e5e5;background:#fff;color:#ccc;display:flex;align-items:center;justify-content:center;cursor:default;transition:all 0.2s ease">
 
           <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="transform:rotate(180deg)">
@@ -459,7 +421,6 @@
         </button>
 
         <button class="prod-nav-arrow prod-nav-arrow-right"
-
           style="position:absolute;right:var(--section-px);top:50%;transform:translateY(-50%);z-index:10;width:3.6rem;height:3.6rem;border-radius:50%;border:1px solid #e5e5e5;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s ease">
 
           <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="transform:rotate(0deg)">
@@ -505,54 +466,30 @@
         </button>
 
         <div class="prod-tabs"
-
           style="display:flex;justify-content:center;flex-wrap:wrap;gap:1.6rem;margin-bottom:1.2rem;position:relative;z-index:2">
 
-          <button class="prod-tab is-active"
-
-            style="background:none;border:none;cursor:pointer;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:#21389a;font-weight:700;transition:color 0.25s ease;padding:0.2rem 0">Samrudhhi-10LH</button>
-
-          <button class="prod-tab "
-
-            style="background:none;border:none;cursor:pointer;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:#888;font-weight:500;transition:color 0.25s ease;padding:0.2rem 0">Flycra
-
-            2.0</button>
-
-          <button class="prod-tab "
-
-            style="background:none;border:none;cursor:pointer;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:#888;font-weight:500;transition:color 0.25s ease;padding:0.2rem 0">Nitya
-
-            FC</button>
-
-          <button class="prod-tab "
-
-            style="background:none;border:none;cursor:pointer;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:#888;font-weight:500;transition:color 0.25s ease;padding:0.2rem 0">Flyura</button>
-
-          <button class="prod-tab "
-
-            style="background:none;border:none;cursor:pointer;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:#888;font-weight:500;transition:color 0.25s ease;padding:0.2rem 0">Uday
-
-            1.6</button>
+          {% for slide in product_slides %}
+          <button class="prod-tab {% if forloop.first %}is-active{% endif %}"
+            style="background:none;border:none;cursor:pointer;font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:#888;font-weight:500;transition:color 0.25s ease;padding:0.2rem 0"
+            data-index="{{ forloop.counter0 }}">{{ slide.title }}</button>
+          {% endfor %}
 
         </div>
 
-        <div class="product-layout">
+        {% for slide in product_slides %}
+        <div class="product-layout {% if forloop.first %}is-active{% endif %}" data-index="{{ forloop.counter0 }}" {% if not forloop.first %}style="display:none"{% endif %}>
 
           <div class="prod-slide-image"
-
             style="flex:0 0 auto;width:22rem;height:22rem;background:linear-gradient(135deg, #21389a 0%, #009BFF 100%);border-radius:1rem;display:flex;align-items:center;justify-content:center;padding:1.6rem">
 
             <div
-
               style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
 
               <div style="will-change:transform;height:100%;width:100%;transform:translateY(5%)">
 
-                <img alt="Samrudhhi-10LH" width="400" height="400" decoding="async"
-
+                <img alt="{{ slide.title }}" width="400" height="400" decoding="async"
                   style="width:100%;height:100%;object-fit:cover;border-radius:0.6rem;filter:drop-shadow(0 12px 28px rgba(0,0,0,0.35))"
-
-                  src="{% static 'main/images/products/Sam%2010-LH%20(Product%20Image)/SAM%2010LH.png' %}" />
+                  src="{{ slide.image }}" />
 
               </div>
 
@@ -563,33 +500,26 @@
           <div class="prod-slide-details" style="flex:1 1 0%">
 
             <span
-
-              style="font-family:var(--font-mono);font-size:0.95rem;text-transform:uppercase;letter-spacing:0.16em;color:#888">Heavy
-
-              Lift Hybrid</span>
+              style="font-family:var(--font-mono);font-size:0.95rem;text-transform:uppercase;letter-spacing:0.16em;color:#888">{{
+              slide.tagline }}</span>
 
             <h3
-
               style="font-size:clamp(2.2rem, 3.4vw, 3rem);font-weight:700;letter-spacing:-0.02em;color:#21389a;margin-top:0.3rem;margin-bottom:1.6rem">
 
-              Samrudhhi-10LH</h3>
+              {{ slide.title }}</h3>
 
             <p class="prod-slide-desc"
-
-              style="font-size:1.2rem;color:#555;line-height:1.5;max-width:46rem;margin-bottom:1.6rem">Built for
-
-              large-scale farming, it allows for more effective crop spraying and coverage.</p>
+              style="font-size:1.2rem;color:#555;line-height:1.5;max-width:46rem;margin-bottom:1.6rem">{{
+              slide.description }}</p>
 
             <div class="prod-spec-row"
-
               style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;width:100%;gap:3.2rem;margin-bottom:2.4rem;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;padding:2rem 0;flex-direction:row">
 
+              {% for spec in slide.specs %}
               <div class="prod-spec-item" style="display:flex;align-items:center;gap:0.8rem;width:auto">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-
                   stroke="#21389a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                   class="lucide lucide-gauge" style="flex-shrink:0">
 
                   <path d="m12 14 4-4">
@@ -602,104 +532,32 @@
 
                 </svg>
 
-                <span style="font-size:1.1rem;letter-spacing:0.03em;text-transform:uppercase;color:#111">31.5 Kg<!-- -->
+                <span style="font-size:1.1rem;letter-spacing:0.03em;text-transform:uppercase;color:#111">{{ spec.value
+                  }}<!-- -->
 
-                  <span style="color:#888">MTOW</span>
-
-                </span>
-
-              </div>
-
-              <div class="prod-spec-item" style="display:flex;align-items:center;gap:0.8rem;width:auto">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-
-                  stroke="#21389a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
-                  class="lucide lucide-gauge" style="flex-shrink:0">
-
-                  <path d="m12 14 4-4">
-
-                  </path>
-
-                  <path d="M3.34 19a10 10 0 1 1 17.32 0">
-
-                  </path>
-
-                </svg>
-
-                <span style="font-size:1.1rem;letter-spacing:0.03em;text-transform:uppercase;color:#111">10 L<!-- -->
-
-                  <span style="color:#888">Tank Capacity</span>
+                  <span style="color:#888">{{ spec.label }}</span>
 
                 </span>
 
               </div>
-
-              <div class="prod-spec-item" style="display:flex;align-items:center;gap:0.8rem;width:auto">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-
-                  stroke="#21389a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
-                  class="lucide lucide-timer" style="flex-shrink:0">
-
-                  <line x1="10" x2="14" y1="2" y2="2">
-
-                  </line>
-
-                  <line x1="12" x2="15" y1="14" y2="11">
-
-                  </line>
-
-                  <circle cx="12" cy="14" r="8">
-
-                  </circle>
-
-                </svg>
-
-                <span style="font-size:1.1rem;letter-spacing:0.03em;text-transform:uppercase;color:#111">24 min<!-- -->
-
-                  <span style="color:#888">Flight Time</span>
-
-                </span>
-
-              </div>
+              {% endfor %}
 
             </div>
 
             <a class="prod-more-info-btn"
-
               style="display:inline-flex;align-items:center;justify-content:center;gap:0.8rem;font-size:1.2rem;font-weight:600;color:#21389a;text-decoration:none;background:transparent;padding:1rem 2rem;border-radius:0.4rem;border:1px solid transparent;text-transform:uppercase;letter-spacing:0.04em;transition:all 0.2s ease"
-
-              href="products/samrudhhi-10lh.html">More Information</a>
+              href="{{ slide.href }}">More Information</a>
 
           </div>
 
         </div>
+        {% endfor %}
 
         <div style="display:flex;justify-content:center;gap:0.6rem;margin-top:1.2rem;position:relative;z-index:2">
 
-          <button class="prod-pagination-btn"
-
-            style="background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center">
-
-            <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
-
-              <circle cx="6" cy="6" r="1.6" fill="#21389a">
-
-              </circle>
-
-              <circle cx="6" cy="6" r="0.7" fill="#21389a" opacity="0.3">
-
-              </circle>
-
-            </svg>
-
-          </button>
-
-          <button class="prod-pagination-btn"
-
+          {% for slide in product_slides %}
+          <button class="prod-pagination-btn {% if forloop.first %}is-active{% endif %}"
+            data-index="{{ forloop.counter0 }}"
             style="background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center">
 
             <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
@@ -711,48 +569,7 @@
             </svg>
 
           </button>
-
-          <button class="prod-pagination-btn"
-
-            style="background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center">
-
-            <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
-
-              <circle cx="6" cy="6" r="0.7" fill="#888" opacity="0.25">
-
-              </circle>
-
-            </svg>
-
-          </button>
-
-          <button class="prod-pagination-btn"
-
-            style="background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center">
-
-            <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
-
-              <circle cx="6" cy="6" r="0.7" fill="#888" opacity="0.25">
-
-              </circle>
-
-            </svg>
-
-          </button>
-
-          <button class="prod-pagination-btn"
-
-            style="background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center">
-
-            <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
-
-              <circle cx="6" cy="6" r="0.7" fill="#888" opacity="0.25">
-
-              </circle>
-
-            </svg>
-
-          </button>
+          {% endfor %}
 
         </div>
 
@@ -761,9 +578,7 @@
     </section>
 
     <section class="section-py"
-
       style="max-width:160rem;margin:0 auto;padding-left:var(--section-px);padding-right:var(--section-px);color:#1a1a1a"
-
       id="services">
 
       <div style="margin-bottom:5rem">
@@ -779,7 +594,6 @@
           <div>
 
             <h2
-
               style="font-size:clamp(2.8rem, 4vw, 4rem);font-weight:600;letter-spacing:-0.03em;margin-top:1.5rem;line-height:1.15">
 
               Our Services</h2>
@@ -791,10 +605,8 @@
           </div>
 
           <a style="display:inline-flex;align-items:center;gap:0.6rem;font-size:1.4rem;font-weight:600;color:#21389A;text-decoration:none;border-bottom:1px solid #21389A;padding-bottom:0.2rem;transition:opacity 0.2s ease;flex-shrink:0;margin-bottom:0.2rem"
-
-            href="services.html">Explore All Services <svg viewBox="0 0 24 24" fill="currentColor" width="12"
-
-              height="12" style="transform:rotate(0deg)">
+            href="{% url 'main:solutions' %}">Explore All Services <svg viewBox="0 0 24 24" fill="currentColor"
+              width="12" height="12" style="transform:rotate(0deg)">
 
               <circle cx="5" cy="2" r="1.3">
 
@@ -845,19 +657,15 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-left:4px solid #21389a;border-radius:0 0.4rem 0.4rem 0;padding:2.2rem 2.4rem;display:flex;flex-direction:column;position:relative"
-
-            href="services/agriculture-spraying.html">
+            href="{% url 'main:industries-agriculture' %}">
 
             <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:1.2rem">
 
               <div
-
                 style="width:3.6rem;height:3.6rem;border-radius:50%;background:#21389a12;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                   class="lucide lucide-tractor" style="width:1.8rem;height:1.8rem;color:#21389a">
 
                   <path d="m10 11 11 .9c.6 0 .9.5.8 1.1l-.8 5h-1">
@@ -911,7 +719,6 @@
             <div style="display:flex;align-items:center;gap:0.4rem;color:#21389a;font-weight:600;font-size:1.15rem">
 
               Learn More <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
-
                 style="transform:rotate(0deg)">
 
                 <circle cx="5" cy="2" r="1.3">
@@ -961,23 +768,18 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-left:4px solid #21389a;border-radius:0 0.4rem 0.4rem 0;padding:2.2rem 2.4rem;display:flex;flex-direction:column;position:relative"
-
-            href="services/gis-survey-mapping.html">
+            href="{% url 'main:solutions-gis-geospatial-intelligence' %}">
 
             <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:1.2rem">
 
               <div
-
                 style="width:3.6rem;height:3.6rem;border-radius:50%;background:#21389a12;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                   class="lucide lucide-map" style="width:1.8rem;height:1.8rem;color:#21389a">
 
                   <path
-
                     d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z">
 
                   </path>
@@ -1005,7 +807,6 @@
             <div style="display:flex;align-items:center;gap:0.4rem;color:#21389a;font-weight:600;font-size:1.15rem">
 
               Learn More <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
-
                 style="transform:rotate(0deg)">
 
                 <circle cx="5" cy="2" r="1.3">
@@ -1055,19 +856,15 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-left:4px solid #21389a;border-radius:0 0.4rem 0.4rem 0;padding:2.2rem 2.4rem;display:flex;flex-direction:column;position:relative"
-
-            href="services/multispectral-scanning.html">
+            href="{% url 'main:solutions-drone-survey-mapping' %}">
 
             <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:1.2rem">
 
               <div
-
                 style="width:3.6rem;height:3.6rem;border-radius:50%;background:#21389a12;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                   class="lucide lucide-scan" style="width:1.8rem;height:1.8rem;color:#21389a">
 
                   <path d="M3 7V5a2 2 0 0 1 2-2h2">
@@ -1101,7 +898,6 @@
             <div style="display:flex;align-items:center;gap:0.4rem;color:#21389a;font-weight:600;font-size:1.15rem">
 
               Learn More <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
-
                 style="transform:rotate(0deg)">
 
                 <circle cx="5" cy="2" r="1.3">
@@ -1151,23 +947,18 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-left:4px solid #21389a;border-radius:0 0.4rem 0.4rem 0;padding:2.2rem 2.4rem;display:flex;flex-direction:column;position:relative"
-
-            href="services/security-surveillance.html">
+            href="{% url 'main:solutions-ai-drone-intelligence' %}">
 
             <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:1.2rem">
 
               <div
-
                 style="width:3.6rem;height:3.6rem;border-radius:50%;background:#21389a12;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                   class="lucide lucide-shield" style="width:1.8rem;height:1.8rem;color:#21389a">
 
                   <path
-
                     d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
 
                   </path>
@@ -1187,7 +978,6 @@
             <div style="display:flex;align-items:center;gap:0.4rem;color:#21389a;font-weight:600;font-size:1.15rem">
 
               Learn More <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
-
                 style="transform:rotate(0deg)">
 
                 <circle cx="5" cy="2" r="1.3">
@@ -1237,19 +1027,15 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-left:4px solid #21389a;border-radius:0 0.4rem 0.4rem 0;padding:2.2rem 2.4rem;display:flex;flex-direction:column;position:relative"
-
-            href="services/dgps-surveying.html">
+            href="{% url 'main:solutions-drone-survey-mapping' %}">
 
             <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:1.2rem">
 
               <div
-
                 style="width:3.6rem;height:3.6rem;border-radius:50%;background:#21389a12;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                   class="lucide lucide-map-pin" style="width:1.8rem;height:1.8rem;color:#21389a">
 
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z">
@@ -1275,7 +1061,6 @@
             <div style="display:flex;align-items:center;gap:0.4rem;color:#21389a;font-weight:600;font-size:1.15rem">
 
               Learn More <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
-
                 style="transform:rotate(0deg)">
 
                 <circle cx="5" cy="2" r="1.3">
@@ -1343,13 +1128,11 @@
             <div>
 
               <h2
-
                 style="font-size:clamp(2.8rem, 4vw, 4rem);font-weight:600;letter-spacing:-0.03em;margin-top:1.5rem;line-height:1.1;color:#fff">
 
                 Built in India, Built for Impact</h2>
 
               <p
-
                 style="font-size:1.6rem;color:rgba(255,255,255,0.85);line-height:1.7;max-width:56rem;margin-top:1.5rem">
 
                 Purpose-driven engineering meets indigenous innovation. Every system is designed, tested, and
@@ -1359,9 +1142,7 @@
             </div>
 
             <a style="display:inline-flex;align-items:center;gap:0.6rem;font-size:1.4rem;font-weight:500;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:0.2rem;transition:opacity 0.2s ease;flex-shrink:0;margin-bottom:0.2rem"
-
-              href="technology.html">Explore Technology <svg viewBox="0 0 24 24" fill="currentColor" width="12"
-
+              href="{% url 'main:about-technology-stack' %}">Explore Technology <svg viewBox="0 0 24 24" fill="currentColor" width="12"
                 height="12" style="transform:rotate(0deg)">
 
                 <circle cx="5" cy="2" r="1.3">
@@ -1413,7 +1194,6 @@
           <div style="height:100%;opacity:1;transform:none">
 
             <div class="card-hover"
-
               style="background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:0.4rem;overflow:hidden;display:grid;grid-template-rows:auto auto 1fr auto;height:100%">
 
               <div style="height:3px;background:#009BFF">
@@ -1423,13 +1203,10 @@
               <div style="padding:2rem 2rem 1.5rem;display:flex;align-items:center;gap:1.2rem">
 
                 <div
-
                   style="width:4.4rem;height:4.4rem;border-radius:0.4rem;background:#009BFF;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                     class="lucide lucide-cpu" style="width:2.2rem;height:2.2rem;color:#fff">
 
                     <rect width="16" height="16" x="4" y="4" rx="2">
@@ -1497,7 +1274,6 @@
           <div style="height:100%;opacity:1;transform:none">
 
             <div class="card-hover"
-
               style="background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:0.4rem;overflow:hidden;display:grid;grid-template-rows:auto auto 1fr auto;height:100%">
 
               <div style="height:3px;background:#009BFF">
@@ -1507,17 +1283,13 @@
               <div style="padding:2rem 2rem 1.5rem;display:flex;align-items:center;gap:1.2rem">
 
                 <div
-
                   style="width:4.4rem;height:4.4rem;border-radius:0.4rem;background:#009BFF;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                     class="lucide lucide-shield-check" style="width:2.2rem;height:2.2rem;color:#fff">
 
                     <path
-
                       d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
 
                     </path>
@@ -1551,7 +1323,6 @@
           <div style="height:100%;opacity:1;transform:none">
 
             <div class="card-hover"
-
               style="background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:0.4rem;overflow:hidden;display:grid;grid-template-rows:auto auto 1fr auto;height:100%">
 
               <div style="height:3px;background:#009BFF">
@@ -1561,17 +1332,13 @@
               <div style="padding:2rem 2rem 1.5rem;display:flex;align-items:center;gap:1.2rem">
 
                 <div
-
                   style="width:4.4rem;height:4.4rem;border-radius:0.4rem;background:#009BFF;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                     class="lucide lucide-shield" style="width:2.2rem;height:2.2rem;color:#fff">
 
                     <path
-
                       d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
 
                     </path>
@@ -1605,9 +1372,7 @@
     </section>
 
     <section class="section-py"
-
       style="max-width:160rem;margin:0 auto;padding-left:var(--section-px);padding-right:var(--section-px);color:#1a1a1a"
-
       id="industries">
 
       <div style="margin-bottom:5rem">
@@ -1619,7 +1384,6 @@
           </span>Who We Serve</span>
 
         <h2
-
           style="font-size:clamp(2.8rem, 4vw, 4rem);font-weight:600;letter-spacing:-0.03em;margin-top:1.5rem;line-height:1.15">
 
           Industries We Serve</h2>
@@ -1635,17 +1399,13 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#ffffff;border-radius:0.4rem;padding:2rem 2.4rem;display:flex;align-items:flex-start;gap:1.6rem;border:1px solid transparent"
-
             href="industries/railways.html">
 
             <div
-
               style="width:4.8rem;height:4.8rem;border-radius:0.4rem;background:#21389a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff">
 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                 class="lucide lucide-tram-front" style="width:2.4rem;height:2.4rem">
 
                 <rect width="16" height="16" x="4" y="3" rx="2">
@@ -1697,17 +1457,13 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#ffffff;border-radius:0.4rem;padding:2rem 2.4rem;display:flex;align-items:flex-start;gap:1.6rem;border:1px solid transparent"
-
-            href="industries/mining.html">
+            href="industries/mining/">
 
             <div
-
               style="width:4.8rem;height:4.8rem;border-radius:0.4rem;background:#21389a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff">
 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                 class="lucide lucide-pickaxe" style="width:2.4rem;height:2.4rem">
 
                 <path d="M14.531 12.469 6.619 20.38a1 1 0 1 1-3-3l7.912-7.912">
@@ -1719,7 +1475,6 @@
                 </path>
 
                 <path
-
                   d="M17.7 3.7a1 1 0 0 0-1.4 0l-4.6 4.6a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z">
 
                 </path>
@@ -1749,17 +1504,13 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#ffffff;border-radius:0.4rem;padding:2rem 2.4rem;display:flex;align-items:flex-start;gap:1.6rem;border:1px solid transparent"
-
-            href="industries/agriculture.html">
+            href="industries/agriculture/">
 
             <div
-
               style="width:4.8rem;height:4.8rem;border-radius:0.4rem;background:#21389a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff">
 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                 class="lucide lucide-sprout" style="width:2.4rem;height:2.4rem">
 
                 <path d="M7 20h10">
@@ -1799,17 +1550,13 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#ffffff;border-radius:0.4rem;padding:2rem 2.4rem;display:flex;align-items:flex-start;gap:1.6rem;border:1px solid transparent"
-
             href="industries/oil-gas.html">
 
             <div
-
               style="width:4.8rem;height:4.8rem;border-radius:0.4rem;background:#21389a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff">
 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                 class="lucide lucide-fuel" style="width:2.4rem;height:2.4rem">
 
                 <line x1="3" x2="15" y1="22" y2="22">
@@ -1849,17 +1596,13 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#ffffff;border-radius:0.4rem;padding:2rem 2.4rem;display:flex;align-items:flex-start;gap:1.6rem;border:1px solid transparent"
-
-            href="industries/construction.html">
+            href="industries/construction/">
 
             <div
-
               style="width:4.8rem;height:4.8rem;border-radius:0.4rem;background:#21389a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff">
 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                 class="lucide lucide-hard-hat" style="width:2.4rem;height:2.4rem">
 
                 <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z">
@@ -1899,21 +1642,16 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a style="text-decoration:none;color:inherit;background:#ffffff;border-radius:0.4rem;padding:2rem 2.4rem;display:flex;align-items:flex-start;gap:1.6rem;border:1px solid transparent"
-
             href="industries/power-utilities.html">
 
             <div
-
               style="width:4.8rem;height:4.8rem;border-radius:0.4rem;background:#21389a;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff">
 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                 class="lucide lucide-zap" style="width:2.4rem;height:2.4rem">
 
                 <path
-
                   d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
 
                 </path>
@@ -1941,9 +1679,7 @@
     </section>
 
     <section class="section-py"
-
       style="max-width:160rem;margin:0 auto;padding-left:var(--section-px);padding-right:var(--section-px);color:#1a1a1a"
-
       id="portfolio">
 
       <div style="margin-bottom:5rem">
@@ -1955,13 +1691,11 @@
           </span>Our Work</span>
 
         <h2
-
           style="font-size:clamp(2.8rem, 4vw, 4rem);font-weight:600;letter-spacing:-0.03em;margin-top:1.5rem;line-height:1.15;color:#1a1a1a;text-align:left;opacity:1;transform:none">
 
           Featured Projects</h2>
 
         <p
-
           style="font-size:1.6rem;color:#555;line-height:1.7;max-width:56rem;margin-top:2rem;text-align:left;opacity:1;transform:none">
 
           Real-world impact across industries — from railway corridors to mining operations and pipeline surveillance.
@@ -1971,9 +1705,7 @@
         <div class="section-header-action" style="text-align:right;margin-top:2rem;opacity:1;transform:none">
 
           <a style="display:inline-flex;align-items:center;gap:0.6rem;font-size:1.4rem;font-weight:600;color:#21389A;text-decoration:none;border-bottom:1px solid #21389A;padding-bottom:0.2rem;transition:opacity 0.2s ease"
-
             href="portfolio.html">View Full Portfolio <svg viewBox="0 0 24 24" fill="currentColor" width="12"
-
               height="12" style="transform:rotate(0deg)">
 
               <circle cx="5" cy="2" r="1.3">
@@ -2025,13 +1757,10 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a class="portfolio-card"
-
             style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-radius:0.4rem;overflow:hidden"
-
             href="portfolio/central-railway-corridor-mapping.html">
 
             <div class="portfolio-card-image"
-
               style="display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;height:22rem;flex-shrink:0">
 
               <div style="position:absolute;inset:-30% 0;overflow:hidden">
@@ -2039,8 +1768,7 @@
                 <div style="will-change:transform;height:100%;width:100%;transform:translateY(6%)">
 
                   <div
-
-                    style="width:100%;height:100%;background:linear-gradient(135deg, #21389A 0%, #009BFF 100%), url(&#x27;/assets/images/pexels/pexels-railway-tracks.jpg&#x27;);background-size:cover;background-position:center;background-blend-mode:overlay">
+                    style="width:100%;height:100%;background:linear-gradient(135deg, #21389A 0%, #009BFF 100%), url(&#x27;{% static 'main/images/pexels/pexels-railway-tracks.jpg' %}&#x27;);background-size:cover;background-position:center;background-blend-mode:overlay">
 
                   </div>
 
@@ -2049,13 +1777,11 @@
               </div>
 
               <div
-
                 style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 60%)">
 
               </div>
 
               <div
-
                 style="color:rgba(255,255,255,0.15);font-size:8rem;font-weight:800;font-family:var(--font-mono);letter-spacing:-0.06em;user-select:none;position:relative;z-index:1">
 
                 01</div>
@@ -2085,13 +1811,10 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a class="portfolio-card"
-
             style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-radius:0.4rem;overflow:hidden"
-
             href="portfolio/jsw-mine-volumetric-survey.html">
 
             <div class="portfolio-card-image"
-
               style="display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;height:22rem;flex-shrink:0">
 
               <div style="position:absolute;inset:-30% 0;overflow:hidden">
@@ -2099,8 +1822,7 @@
                 <div style="will-change:transform;height:100%;width:100%;transform:translateY(6%)">
 
                   <div
-
-                    style="width:100%;height:100%;background:linear-gradient(135deg, #21389A 0%, #009BFF 100%), url(&#x27;/assets/images/pexels/pexels-quarry-site.jpg&#x27;);background-size:cover;background-position:center;background-blend-mode:overlay">
+                    style="width:100%;height:100%;background:linear-gradient(135deg, #21389A 0%, #009BFF 100%), url(&#x27;{% static 'main/images/pexels/pexels-quarry-site.jpg' %}&#x27;);background-size:cover;background-position:center;background-blend-mode:overlay">
 
                   </div>
 
@@ -2109,13 +1831,11 @@
               </div>
 
               <div
-
                 style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 60%)">
 
               </div>
 
               <div
-
                 style="color:rgba(255,255,255,0.15);font-size:8rem;font-weight:800;font-family:var(--font-mono);letter-spacing:-0.06em;user-select:none;position:relative;z-index:1">
 
                 02</div>
@@ -2143,13 +1863,10 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a class="portfolio-card"
-
             style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-radius:0.4rem;overflow:hidden"
-
             href="portfolio/iocl-pipeline-surveillance.html">
 
             <div class="portfolio-card-image"
-
               style="display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;height:22rem;flex-shrink:0">
 
               <div style="position:absolute;inset:-30% 0;overflow:hidden">
@@ -2157,8 +1874,7 @@
                 <div style="will-change:transform;height:100%;width:100%;transform:translateY(6%)">
 
                   <div
-
-                    style="width:100%;height:100%;background:linear-gradient(135deg, #21389A 0%, #009BFF 100%), url(&#x27;/assets/images/pexels/pexels-pipeline.jpg&#x27;);background-size:cover;background-position:center;background-blend-mode:overlay">
+                    style="width:100%;height:100%;background:linear-gradient(135deg, #21389A 0%, #009BFF 100%), url(&#x27;{% static 'main/images/pexels/pexels-pipeline.jpg' %}&#x27;);background-size:cover;background-position:center;background-blend-mode:overlay">
 
                   </div>
 
@@ -2167,13 +1883,11 @@
               </div>
 
               <div
-
                 style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 60%)">
 
               </div>
 
               <div
-
                 style="color:rgba(255,255,255,0.15);font-size:8rem;font-weight:800;font-family:var(--font-mono);letter-spacing:-0.06em;user-select:none;position:relative;z-index:1">
 
                 03</div>
@@ -2209,7 +1923,6 @@
       <div style="max-width:160rem;margin:0 auto;text-align:center;padding:0 var(--section-px)">
 
         <span
-
           style="font-family:var(--font-mono);font-size:1.2rem;text-transform:uppercase;letter-spacing:0.1em;color:#888;font-weight:600;display:block;margin-bottom:5rem">Trusted
 
           by Leading Organisations</span>
@@ -2222,7 +1935,8 @@
 
           <img src="{% static 'main/img/client logos/basf.jpg' %}" alt="BASF" class="client-logo" />
 
-          <img src="{% static 'main/img/client logos/central-railway.png' %}" alt="Central Railway" class="client-logo" />
+          <img src="{% static 'main/img/client logos/central-railway.png' %}" alt="Central Railway"
+            class="client-logo" />
 
           <img src="{% static 'main/img/client logos/iocl.jpg' %}" alt="IOCL" class="client-logo" />
 
@@ -2252,7 +1966,8 @@
 
           <img src="{% static 'main/img/client logos/basf.jpg' %}" alt="BASF" class="client-logo" />
 
-          <img src="{% static 'main/img/client logos/central-railway.png' %}" alt="Central Railway" class="client-logo" />
+          <img src="{% static 'main/img/client logos/central-railway.png' %}" alt="Central Railway"
+            class="client-logo" />
 
           <img src="{% static 'main/img/client logos/iocl.jpg' %}" alt="IOCL" class="client-logo" />
 
@@ -2310,7 +2025,8 @@
 
           <img src="{% static 'main/img/client logos/iocl.jpg' %}" alt="IOCL" class="client-logo" />
 
-          <img src="{% static 'main/img/client logos/central-railway.png' %}" alt="Central Railway" class="client-logo" />
+          <img src="{% static 'main/img/client logos/central-railway.png' %}" alt="Central Railway"
+            class="client-logo" />
 
           <img src="{% static 'main/img/client logos/basf.jpg' %}" alt="BASF" class="client-logo" />
 
@@ -2340,7 +2056,8 @@
 
           <img src="{% static 'main/img/client logos/iocl.jpg' %}" alt="IOCL" class="client-logo" />
 
-          <img src="{% static 'main/img/client logos/central-railway.png' %}" alt="Central Railway" class="client-logo" />
+          <img src="{% static 'main/img/client logos/central-railway.png' %}" alt="Central Railway"
+            class="client-logo" />
 
           <img src="{% static 'main/img/client logos/basf.jpg' %}" alt="BASF" class="client-logo" />
 
@@ -2355,7 +2072,6 @@
       <div style="max-width:160rem;margin:0 auto;padding:0 var(--section-px);position:relative">
 
         <span
-
           style="position:absolute;top:-6rem;left:var(--section-px);font-size:clamp(20rem, 30vw, 40rem);line-height:1;font-weight:700;color:rgba(255,255,255,0.03);user-select:none;pointer-events:none;font-family:Georgia, serif">“</span>
 
         <div style="opacity:1;transform:none">
@@ -2369,7 +2085,6 @@
               </div>
 
               <span
-
                 style="font-size:1.1rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.65);font-family:var(--font-mono)">Client
 
                 Testimonials</span>
@@ -2381,7 +2096,6 @@
             </div>
 
             <h2
-
               style="font-size:clamp(3.2rem, 5vw, 5.2rem);font-weight:600;line-height:1.1;letter-spacing:-0.03em;margin:0">
 
               Trusted by Industry Leaders</h2>
@@ -2400,38 +2114,36 @@
 
           <div style="max-width:800px;margin:0 auto;position:relative;z-index:1">
 
-            <div
-
-              style="display:flex;flex-direction:column;transition:opacity 0.5s ease;min-height:16rem;justify-content:center">
+            {% for t in testimonials %}
+            <div class="testimonial-slide {% if forloop.first %}is-active{% endif %}" data-index="{{ forloop.counter0 }}"
+              style="display:flex;flex-direction:column;transition:opacity 0.5s ease;min-height:16rem;justify-content:center;{% if not forloop.first %}display:none{% endif %}">
 
               <p
-
                 style="font-size:clamp(1.6rem, 4.5vw, 2.8rem);line-height:1.4;font-weight:300;letter-spacing:-0.01em;opacity:0.92">
 
-                Aeronica delivered exceptional precision in their GIS mapping for our railway corridor project. The
-
-                sub-centimeter accuracy and detailed terrain analysis exceeded our expectations.</p>
+                {{ t.quote }}</p>
 
             </div>
+            {% endfor %}
+
+            <script type="application/json" class="testimonials-data">{{ testimonials|escapejs }}</script>
 
             <div class="testimonials-footer">
 
               <div>
 
-                <div style="font-size:1.4rem;font-weight:600;line-height:1.3">Chief Engineer</div>
+                                <div id="testimonialName" style="font-size:1.4rem;font-weight:600;line-height:1.3">{{ testimonials.0.name }}</div>
 
-                <div
-
+                <div id="testimonialRole"
                   style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.15rem">
 
-                  Central Railway</div>
+                  {{ testimonials.0.role }}</div>
 
               </div>
 
               <div style="display:flex;align-items:center;gap:1.2rem">
 
-                <button aria-label="Previous testimonial"
-
+                <button class="testimonial-prev" aria-label="Previous testimonial"
                   style="width:3.2rem;height:3.2rem;border-radius:50%;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s ease">
 
                   <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="transform:rotate(180deg)">
@@ -2478,70 +2190,25 @@
 
                 <div style="display:flex;gap:0.8rem;align-items:center">
 
-                  <button aria-label="Testimonial 1"
-
+                  {% for t in testimonials %}
+                  <button class="testimonial-dot {% if forloop.first %}is-active{% endif %}" data-index="{{ forloop.counter0 }}"
+                    aria-label="Testimonial {{ forloop.counter }}"
                     style="background:none;border:none;cursor:pointer;padding:0;color:#fff;display:flex;align-items:center;justify-content:center">
 
                     <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
 
-                      <circle cx="6" cy="6" r="1.6" fill="currentColor">
-
-                      </circle>
-
-                      <circle cx="6" cy="6" r="0.7" fill="currentColor" opacity="0.3">
+                      <circle cx="6" cy="6" r="0.7" fill="#fff" opacity="0.25">
 
                       </circle>
 
                     </svg>
 
                   </button>
-
-                  <button aria-label="Testimonial 2"
-
-                    style="background:none;border:none;cursor:pointer;padding:0;color:#fff;display:flex;align-items:center;justify-content:center">
-
-                    <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
-
-                      <circle cx="6" cy="6" r="0.7" fill="currentColor" opacity="0.25">
-
-                      </circle>
-
-                    </svg>
-
-                  </button>
-
-                  <button aria-label="Testimonial 3"
-
-                    style="background:none;border:none;cursor:pointer;padding:0;color:#fff;display:flex;align-items:center;justify-content:center">
-
-                    <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
-
-                      <circle cx="6" cy="6" r="0.7" fill="currentColor" opacity="0.25">
-
-                      </circle>
-
-                    </svg>
-
-                  </button>
-
-                  <button aria-label="Testimonial 4"
-
-                    style="background:none;border:none;cursor:pointer;padding:0;color:#fff;display:flex;align-items:center;justify-content:center">
-
-                    <svg viewBox="0 0 12 12" fill="currentColor" width="14" height="14">
-
-                      <circle cx="6" cy="6" r="0.7" fill="currentColor" opacity="0.25">
-
-                      </circle>
-
-                    </svg>
-
-                  </button>
+                  {% endfor %}
 
                 </div>
 
-                <button aria-label="Next testimonial"
-
+                <button class="testimonial-next" aria-label="Next testimonial"
                   style="width:3.2rem;height:3.2rem;border-radius:50%;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s ease">
 
                   <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="transform:rotate(0deg)">
@@ -2599,9 +2266,7 @@
     </section>
 
     <section class="section-py"
-
       style="max-width:160rem;margin:0 auto;padding-left:var(--section-px);padding-right:var(--section-px);color:#1a1a1a"
-
       id="news">
 
       <div style="margin-bottom:5rem">
@@ -2613,13 +2278,11 @@
           </span>Latest News</span>
 
         <h2
-
           style="font-size:clamp(2.8rem, 4vw, 4rem);font-weight:600;letter-spacing:-0.03em;margin-top:1.5rem;line-height:1.15;color:#1a1a1a;text-align:left;opacity:1;transform:none">
 
           Insights &amp; Updates</h2>
 
         <p
-
           style="font-size:1.6rem;color:#555;line-height:1.7;max-width:56rem;margin-top:2rem;text-align:left;opacity:1;transform:none">
 
           The latest from Aeronica on drone technology, industry trends, and operational insights.</p>
@@ -2627,9 +2290,7 @@
         <div class="section-header-action" style="text-align:right;margin-top:2rem;opacity:1;transform:none">
 
           <a style="display:inline-flex;align-items:center;gap:0.6rem;font-size:1.4rem;font-weight:600;color:#21389A;text-decoration:none;border-bottom:1px solid #21389A;padding-bottom:0.2rem;transition:opacity 0.2s ease"
-
             href="insights.html">View All Articles <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
-
               style="transform:rotate(0deg)">
 
               <circle cx="5" cy="2" r="1.3">
@@ -2681,13 +2342,10 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a class="news-card"
-
             style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-radius:0.4rem"
-
             href="insights/drone-technology-agriculture-2026.html">
 
             <div
-
               style="width:6rem;height:6rem;border-radius:0.2rem;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:2rem;font-weight:700;color:rgba(255,255,255,0.9);font-family:var(--font-mono);letter-spacing:-0.03em">
 
               <div style="position:absolute;inset:-30% 0;overflow:hidden">
@@ -2695,7 +2353,6 @@
                 <div style="will-change:transform;height:100%;width:100%;transform:translateY(3%)">
 
                   <div
-
                     style="width:100%;height:100%;background:linear-gradient(135deg, #21389a, #009bff), url(&#x27;/assets/images/pexels/pexels-drone-agriculture.jpg&#x27;);background-size:cover;background-position:center;background-blend-mode:overlay">
 
                   </div>
@@ -2723,15 +2380,12 @@
             </div>
 
             <div class="news-card-meta"
-
               style="display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem;flex-shrink:0">
 
               <span style="display:flex;align-items:center;gap:0.4rem;font-size:1.3rem;color:#888">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                   class="lucide lucide-calendar" style="width:1.4rem;height:1.4rem">
 
                   <path d="M8 2v4">
@@ -2807,13 +2461,10 @@
         <div style="height:100%;opacity:1;transform:none">
 
           <a class="news-card"
-
             style="text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e5e5;border-radius:0.4rem"
-
             href="insights/gis-drone-mapping-infrastructure.html">
 
             <div
-
               style="width:6rem;height:6rem;border-radius:0.2rem;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:2rem;font-weight:700;color:rgba(255,255,255,0.9);font-family:var(--font-mono);letter-spacing:-0.03em">
 
               <div style="position:absolute;inset:-30% 0;overflow:hidden">
@@ -2821,7 +2472,6 @@
                 <div style="will-change:transform;height:100%;width:100%;transform:translateY(3%)">
 
                   <div
-
                     style="width:100%;height:100%;background:linear-gradient(135deg, #21389a, #009bff), url(&#x27;/assets/images/pexels/pexels-smart-city.jpg&#x27;);background-size:cover;background-position:center;background-blend-mode:overlay">
 
                   </div>
@@ -2849,15 +2499,12 @@
             </div>
 
             <div class="news-card-meta"
-
               style="display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem;flex-shrink:0">
 
               <span style="display:flex;align-items:center;gap:0.4rem;font-size:1.3rem;color:#888">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-
                   class="lucide lucide-calendar" style="width:1.4rem;height:1.4rem">
 
                   <path d="M8 2v4">
@@ -2935,21 +2582,17 @@
     </section>
 
     <section id="cta"
-
       style="background:#ffffff;padding-top:var(--section-py);padding-bottom:var(--section-py);padding-left:var(--section-px);padding-right:var(--section-px);max-width:160rem;margin:0 auto">
 
       <div class="cta-inner"
-
         style="max-width:160rem;margin:0 auto;background:#21389A;border-radius:0.8rem;position:relative;overflow:hidden">
 
         <div
-
           style="position:absolute;top:-50%;right:-10%;width:40rem;height:40rem;border-radius:50%;background:rgba(255,255,255,0.03);pointer-events:none">
 
         </div>
 
         <div
-
           style="position:absolute;bottom:-30%;left:20%;width:25rem;height:25rem;border-radius:50%;background:rgba(0,155,255,0.08);pointer-events:none">
 
         </div>
@@ -2957,13 +2600,11 @@
         <div style="position:relative;z-index:1;max-width:56rem">
 
           <span
-
             style="font-family:var(--font-mono);font-size:1.2rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.7);font-weight:600;display:block;margin-bottom:1rem">Let&#x27;s
 
             work together</span>
 
           <h2
-
             style="font-size:clamp(2.8rem, 4vw, 4rem);font-weight:600;line-height:1.15;letter-spacing:-0.03em;color:#fff;margin-bottom:1.2rem">
 
             Ready to transform your operations?</h2>
@@ -2977,10 +2618,8 @@
         <div style="position:relative;z-index:1;flex-shrink:0">
 
           <a style="display:inline-flex;align-items:center;gap:0.6rem;padding:1.1rem 2.8rem;background:#fff;color:#21389A;border-radius:var(--radius-md);font-size:1.5rem;font-weight:600;text-decoration:none;transition:opacity 0.2s ease"
-
-            href="contact.html">Start a Conversation <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"
-
-              style="transform:rotate(0deg)">
+            href="{% url 'main:contact' %}">Start a Conversation <svg viewBox="0 0 24 24" fill="currentColor" width="14"
+              height="14" style="transform:rotate(0deg)">
 
               <circle cx="5" cy="2" r="1.3">
 
@@ -3077,13 +2716,11 @@
   </button>
 
   <a href="https://wa.me/7276469160?text=Welcome%20to%20Aeronica%0AWe%27re%20here%20to%20help.%20What%20can%20we%20do%20for%20you%20today%3F"
-
     target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat on WhatsApp">
 
     <svg viewBox="0 0 32 32" fill="#fff" width="22" height="22">
 
       <path
-
         d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.132 6.744 3.054 9.374L1.054 31.25l6.124-1.97C9.72 30.95 12.768 32 16.004 32 24.83 32 32 24.822 32 16S24.83 0 16.004 0zm9.318 22.594c-.39 1.1-1.932 2.014-3.168 2.28-.844.18-1.946.322-5.658-1.216-4.75-1.966-7.806-6.79-8.04-7.104-.226-.314-1.896-2.524-1.896-4.814s1.2-3.414 1.626-3.882c.39-.428.922-.56 1.228-.56.314 0 .628.002.902.016.29.014.68-.11 1.064.814.39.956 1.33 3.24 1.446 3.472.116.232.194.502.038.816-.156.314-.232.51-.462.786-.232.276-.486.616-.694.828-.232.232-.472.484-.202.946.27.462 1.2 1.98 2.58 3.208 1.77 1.58 3.26 2.07 3.722 2.298.462.23.732.194 1.002-.116.27-.314 1.16-1.352 1.47-1.824.314-.472.628-.39 1.064-.234.436.156 2.772 1.308 3.246 1.544.474.236.79.352.906.546.116.194.116 1.1-.274 2.2z">
 
       </path>
@@ -3099,6 +2736,10 @@
   <!-- Hero Carousel Script -->
 
   <script src="{% static 'main/js/hero-slider.js' %}" defer></script>
+
+  <script src="{% static 'main/js/product-slider.js' %}" defer></script>
+
+  <script src="{% static 'main/js/testimonials-slider.js' %}" defer></script>
 
 
 
