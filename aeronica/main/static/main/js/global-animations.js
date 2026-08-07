@@ -67,7 +67,7 @@
     initPreloader();
     initNavbar();
     if (!isTouchDevice()) {
-      initCustomCursor();
+      // initCustomCursor(); // Disabled custom cursor to restore default pointer behavior on links/buttons
       initCardTilt();
     }
     initBackToTop();
