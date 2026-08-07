@@ -29,13 +29,13 @@
           <nav
             style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem;font-size:1.3rem;color:rgba(255,255,255,0.7);font-family:var(--font-mono)">
             <a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s"
-              href="../index.html">Home</a><span style="opacity:0.4">/</span><a
+              href="{% url 'main:home' %}">Home</a><span style="opacity:0.4">/</span><a
               style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s"
-              href="../solutions.html">Solutions</a><span style="opacity:0.4">/</span><span
+              href="{% url 'main:solutions' %}">Solutions</a><span style="opacity:0.4">/</span><span
               style="color:rgba(255,255,255,0.8)">Drone Survey &amp; Mapping</span></nav>
           <div style="display:flex;align-items:flex-start;gap:1.2rem"><a
               style="display:flex;align-items:center;color:rgba(255,255,255,0.7);margin-top:0.4rem;flex-shrink:0"
-              href="../solutions.html"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
+              href="{% url 'main:solutions' %}"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
                 style="transform:rotate(180deg)">
                 <circle cx="5" cy="2" r="1.3"></circle>
                 <circle cx="8.5" cy="4.5" r="1.3"></circle>
@@ -270,7 +270,7 @@
             </p>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between"><a
-              style="text-decoration:none;color:inherit" href="../industries/construction.html">
+              style="text-decoration:none;color:inherit" href="{% url 'main:industries-construction' %}">
               <div
                 style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:0.4rem;padding:1.2rem 2rem;transition:all 0.3s ease;cursor:pointer">
                 <div
@@ -296,7 +296,7 @@
                   <circle cx="5" cy="22" r="1.3"></circle>
                 </svg>
               </div>
-            </a><a style="text-decoration:none;color:inherit" href="../industries/mining.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:industries-mining' %}">
               <div
                 style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:0.4rem;padding:1.2rem 2rem;transition:all 0.3s ease;cursor:pointer">
                 <div
@@ -319,7 +319,7 @@
                   <circle cx="5" cy="22" r="1.3"></circle>
                 </svg>
               </div>
-            </a><a style="text-decoration:none;color:inherit" href="../industries/transportation.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:industries-transportation' %}">
               <div
                 style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:0.4rem;padding:1.2rem 2rem;transition:all 0.3s ease;cursor:pointer">
                 <div
@@ -346,7 +346,7 @@
                   <circle cx="5" cy="22" r="1.3"></circle>
                 </svg>
               </div>
-            </a><a style="text-decoration:none;color:inherit" href="../industries/real-estate.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:industries-real-estate' %}">
               <div
                 style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:0.4rem;padding:1.2rem 2rem;transition:all 0.3s ease;cursor:pointer">
                 <div
@@ -370,7 +370,7 @@
                   <circle cx="5" cy="22" r="1.3"></circle>
                 </svg>
               </div>
-            </a><a style="text-decoration:none;color:inherit" href="../industries/government.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:industries-government' %}">
               <div
                 style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:0.4rem;padding:1.2rem 2rem;transition:all 0.3s ease;cursor:pointer">
                 <div
@@ -445,7 +445,7 @@
               Study:</strong> <!-- -->450+ kilometers of railway corridor mapped for Central Railway — sub-centimeter
             alignment data delivered 60% faster than traditional methods.</p><a
             style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.8rem 1.8rem;background:#21389A;color:#fff;border-radius:0.2rem;font-weight:600;font-size:1.3rem;text-decoration:none"
-            href="../case-studies.html">View Study <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
+            href="{% url 'main:case-studies' %}">View Study <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
               style="transform:rotate(0deg)">
               <circle cx="5" cy="2" r="1.3"></circle>
               <circle cx="8.5" cy="4.5" r="1.3"></circle>
@@ -462,7 +462,7 @@
       <section style="padding:0 var(--section-px) 8rem;max-width:160rem;margin:0 auto;opacity:1;transform:none">
         <div style="text-align:center"><a
             style="display:inline-flex;align-items:center;gap:0.8rem;padding:1.2rem 2.8rem;border:1px solid #e5e5e5;border-radius:0.4rem;font-weight:600;font-size:1.4rem;color:#009BFF;text-decoration:none;transition:all 0.3s ease"
-            href="../solutions.html"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
+            href="{% url 'main:solutions' %}"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
               style="transform:rotate(180deg)">
               <circle cx="5" cy="2" r="1.3"></circle>
               <circle cx="8.5" cy="4.5" r="1.3"></circle>
@@ -496,7 +496,7 @@
           </div>
           <div style="position:relative;z-index:1;flex-shrink:0"><a
               style="display:inline-flex;align-items:center;gap:0.6rem;padding:1.1rem 2.8rem;background:#fff;color:#21389A;border-radius:var(--radius-md);font-size:1.5rem;font-weight:600;text-decoration:none;transition:opacity 0.2s ease"
-              href="../contact.html">Start a Conversation <svg viewBox="0 0 24 24" fill="currentColor" width="14"
+              href="{% url 'main:contact' %}">Start a Conversation <svg viewBox="0 0 24 24" fill="currentColor" width="14"
                 height="14" style="transform:rotate(0deg)">
                 <circle cx="5" cy="2" r="1.3"></circle>
                 <circle cx="8.5" cy="4.5" r="1.3"></circle>

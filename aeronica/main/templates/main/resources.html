@@ -54,7 +54,7 @@
 
             <a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s"
 
-              href="./index.html">Home</a><span style="opacity:0.4">/</span><span
+              href="{% url 'main:home' %}">Home</a><span style="opacity:0.4">/</span><span
 
               style="color:rgba(255,255,255,0.8)">Resources</span>
 
@@ -208,7 +208,7 @@
 
               style="display:inline-flex;align-items:center;gap:0.6rem;flex-shrink:0;position:relative;z-index:1;padding:1rem 2rem;background:#fff;color:#21389A;border-radius:0.4rem;font-weight:600;font-size:1.3rem;text-decoration:none"
 
-              href="resources/drone-regulations.html">Read Guide <svg viewBox="0 0 24 24" fill="currentColor" width="12"
+              href="{% url 'main:resources-drone-regulations' %}">Read Guide <svg viewBox="0 0 24 24" fill="currentColor" width="12"
 
                 height="12" style="transform:rotate(0deg)">
 
@@ -256,7 +256,7 @@
 
             style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.6rem;margin-top:2.4rem">
 
-            <a style="text-decoration:none;color:inherit" href="resources/blog.html">
+            <a style="text-decoration:none;color:inherit" href="{% url 'main:resources-blog' %}">
 
               <div
 
@@ -328,7 +328,7 @@
 
               </div>
 
-            </a><a style="text-decoration:none;color:inherit" href="resources/whitepapers.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:resources-whitepapers' %}">
 
               <div
 
@@ -408,7 +408,7 @@
 
               </div>
 
-            </a><a style="text-decoration:none;color:inherit" href="resources/news-media.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:resources-news-media' %}">
 
               <div
 
@@ -516,7 +516,7 @@
 
             style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.6rem;margin-top:2.4rem">
 
-            <a style="text-decoration:none;color:inherit" href="resources/drone-regulations.html">
+            <a style="text-decoration:none;color:inherit" href="{% url 'main:resources-drone-regulations' %}">
 
               <div
 
@@ -596,7 +596,7 @@
 
               </div>
 
-            </a><a style="text-decoration:none;color:inherit" href="resources/faqs.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:resources-faqs' %}">
 
               <div
 
@@ -672,7 +672,7 @@
 
               </div>
 
-            </a><a style="text-decoration:none;color:inherit" href="resources/downloads.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:resources-downloads' %}">
 
               <div
 
@@ -782,7 +782,7 @@
 
             style="display:inline-flex;align-items:center;gap:0.6rem;position:relative;z-index:1;padding:1.2rem 2.4rem;background:#21389A;color:#fff;border-radius:0.4rem;font-weight:600;font-size:1.4rem;text-decoration:none;flex-shrink:0"
 
-            href="contact.html">Contact Support <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
+            href="{% url 'main:contact' %}">Contact Support <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
 
               style="transform:rotate(0deg)">
 
@@ -852,7 +852,7 @@
 
               style="display:inline-flex;align-items:center;gap:0.6rem;padding:1.1rem 2.8rem;background:#fff;color:#21389A;border-radius:var(--radius-md);font-size:1.5rem;font-weight:600;text-decoration:none;transition:opacity 0.2s ease"
 
-              href="contact.html">Start a Conversation <svg viewBox="0 0 24 24" fill="currentColor" width="14"
+              href="{% url 'main:contact' %}">Start a Conversation <svg viewBox="0 0 24 24" fill="currentColor" width="14"
 
                 height="14" style="transform:rotate(0deg)">
 

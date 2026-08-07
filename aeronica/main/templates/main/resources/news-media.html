@@ -54,11 +54,11 @@
 
             <a style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s"
 
-              href="../index.html">Home</a><span style="opacity:0.4">/</span><a
+              href="{% url 'main:home' %}">Home</a><span style="opacity:0.4">/</span><a
 
               style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s"
 
-              href="../resources.html">Resources</a><span style="opacity:0.4">/</span><span
+              href="{% url 'main:resources' %}">Resources</a><span style="opacity:0.4">/</span><span
 
               style="color:rgba(255,255,255,0.8)">News &amp; Media</span></nav>
 
@@ -66,7 +66,7 @@
 
               style="display:flex;align-items:center;color:rgba(255,255,255,0.7);margin-top:0.4rem;flex-shrink:0"
 
-              href="../resources.html"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
+              href="{% url 'main:resources' %}"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
 
                 style="transform:rotate(180deg)">
 
@@ -124,7 +124,7 @@
 
               style="text-decoration:none;color:inherit"
 
-              href="../resources/news-media/aeronica-receives-dgca-type-certification-for-samrudhhi-10l.html">
+              href="{% url 'main:resources-news-media-aeronica-receives-dgca-type-certification-for-samrudhhi-10l' %}">
 
               <div
 
@@ -178,7 +178,7 @@
 
             </a><a style="text-decoration:none;color:inherit"
 
-              href="../resources/news-media/partnership-with-iit-bombay-for-ai-research.html">
+              href="{% url 'main:resources-news-media-partnership-with-iit-bombay-for-ai-research' %}">
 
               <div
 
@@ -232,7 +232,7 @@
 
             </a><a style="text-decoration:none;color:inherit"
 
-              href="../resources/news-media/expansion-of-r-d-facility-in-pune.html">
+              href="{% url 'main:resources-news-media' %}">
 
               <div
 
@@ -304,7 +304,7 @@
 
           <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:1.6rem"><a
 
-              style="text-decoration:none;color:inherit" href="../resources/news-media/the-economic-times.html">
+              style="text-decoration:none;color:inherit" href="{% url 'main:resources-news-media' %}">
 
               <div
 
@@ -350,7 +350,7 @@
 
               </div>
 
-            </a><a style="text-decoration:none;color:inherit" href="../resources/news-media/yourstory.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:resources-news-media' %}">
 
               <div
 
@@ -396,7 +396,7 @@
 
               </div>
 
-            </a><a style="text-decoration:none;color:inherit" href="../resources/news-media/business-standard.html">
+            </a><a style="text-decoration:none;color:inherit" href="{% url 'main:resources-news-media' %}">
 
               <div
 
@@ -454,7 +454,7 @@
 
             style="display:inline-flex;align-items:center;gap:0.6rem;font-size:1.4rem;font-weight:600;color:#009BFF;text-decoration:none"
 
-            href="../resources.html"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
+            href="{% url 'main:resources' %}"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
 
               style="transform:rotate(180deg)">
 
@@ -522,7 +522,7 @@
 
               style="display:inline-flex;align-items:center;gap:0.6rem;padding:1.1rem 2.8rem;background:#fff;color:#21389A;border-radius:var(--radius-md);font-size:1.5rem;font-weight:600;text-decoration:none;transition:opacity 0.2s ease"
 
-              href="../contact.html">Start a Conversation <svg viewBox="0 0 24 24" fill="currentColor" width="14"
+              href="{% url 'main:contact' %}">Start a Conversation <svg viewBox="0 0 24 24" fill="currentColor" width="14"
 
                 height="14" style="transform:rotate(0deg)">
 
