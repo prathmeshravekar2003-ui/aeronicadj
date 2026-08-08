@@ -510,7 +510,7 @@
               style="font-size:1.2rem;color:#555;line-height:1.5;max-width:46rem;margin-bottom:1.6rem">{{ slide.description }}</p>
 
             <div class="prod-spec-row"
-              style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;width:100%;gap:3.2rem;margin-bottom:2.4rem;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;padding:2rem 0;flex-direction:row">
+              style="display:flex;flex-wrap:wrap;justify-content:{% if slide.slug == 'nitya-fc' %}flex-start{% else %}space-between{% endif %};align-items:{% if slide.slug == 'nitya-fc' %}flex-start{% else %}center{% endif %};width:100%;gap:{% if slide.slug == 'nitya-fc' %}1.2rem{% else %}3.2rem{% endif %};margin-bottom:2.4rem;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;padding:2rem 0;flex-direction:{% if slide.slug == 'nitya-fc' %}column{% else %}row{% endif %}">
 
               {% for spec in slide.specs %}
               <div class="prod-spec-item" style="display:flex;align-items:center;gap:0.8rem;width:auto">

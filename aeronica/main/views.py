@@ -119,6 +119,7 @@ class IndexView(TemplateView):
             {
                 "title": "Samrudhhi-10LH",
                 "tagline": "Heavy Lift Hybrid",
+                "slug": "samrudhhi-10lh",
                 "description": "Built for large-scale farming, it allows for more effective crop spraying and coverage.",
                 "image": resolve_static('main/images/products/Sam_10LH/SAM_10LH.png'),
                 "href": reverse('main:products-samrudhhi-10lh'),
@@ -131,6 +132,7 @@ class IndexView(TemplateView):
             {
                 "title": "Flycra 2.0",
                 "tagline": "Mapping",
+                "slug": "flycra-20",
                 "description": "A high-performance mapping drone that delivers sub-centimeter accuracy. Ideal for GIS surveys, construction monitoring, and infrastructure inspection.",
                 "image": resolve_static('main/images/products/Flycra 2.0/Flycra 2.0 (front view).png'),
                 "href": reverse('main:products-flycra-20'),
@@ -143,6 +145,7 @@ class IndexView(TemplateView):
             {
                 "title": "Nitya FC",
                 "tagline": "Flight Controller",
+                "slug": "nitya-fc",
                 "description": "An indigenous flight controller that provides unprecedented stability and interoperability with our own AI analytics platforms.",
                 "image": resolve_static('main/images/products/nitya-fc/Nitya FC.png'),
                 "href": reverse('main:products-nitya-fc'),
@@ -155,6 +158,7 @@ class IndexView(TemplateView):
             {
                 "title": "Flyura",
                 "tagline": "Surveillance",
+                "slug": "flyura",
                 "description": "Advanced surveillance UAV designed for defense and critical infrastructure monitoring with EO/IR imaging and AI target detection.",
                 "image": resolve_static('main/images/products/Flyura images/ChatGPT Image Jul 24, 2026, 11_48_49 AM.png'),
                 "href": reverse('main:products-flyura'),
@@ -167,13 +171,14 @@ class IndexView(TemplateView):
             {
                 "title": "Uday 1.6",
                 "tagline": "Tactical",
+                "slug": "uday-16",
                 "description": "Compact tactical quadcopter built for rapid deployment, real-time reconnaissance, and reliable aerial surveillance.",
                 "image": resolve_static('main/images/products/Uday 1.6/P1, Uday.png'),
                 "href": reverse('main:products-uday-16'),
                 "specs": [
                     {"value": "30 min", "label": "Flight Time"},
                     {"value": "1.6 kg", "label": "MTOW"},
-                    {"value": "4K / 6× Zoom", "label": "Camera"},
+                    {"value": "4K / 6\u00d7 Zoom", "label": "Camera"},
                 ],
             },
         ]
