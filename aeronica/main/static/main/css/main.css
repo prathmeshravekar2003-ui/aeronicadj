@@ -2396,7 +2396,7 @@ html.modal-open * {
 .hero-bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.15) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0.15) 100%);
     z-index: 1;
 }
 
@@ -2422,26 +2422,26 @@ html.modal-open * {
 
 @media (max-width: 768px) {
     .hero-bg-overlay {
-        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.7) 100%) !important;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.7) 100%) !important;
     }
-    
+
     .hero-text-content {
         padding-left: 2rem !important;
         padding-right: 2rem !important;
         text-align: left !important;
     }
-    
+
     .hero-cta-wrap {
         justify-content: flex-start !important;
     }
-    
+
     /* Pagination aligned left with the text on mobile */
     .hero-controls {
         left: 2rem !important;
         transform: none !important;
         bottom: 2.5rem !important;
     }
-    
+
     .hero-description {
         margin: 0 0 3rem !important;
         max-width: 100% !important;

@@ -3,7 +3,7 @@
  * Supports: Navbar Scroll & Interaction, Custom Cursor, Preloader/Loading Screen, 
  *           3D Card Tilt, Stats Number Ticker, Smooth Scroll (Lenis), and Scroll Entrance Reveal.
  */
-(function() {
+(function () {
   'use strict';
 
   // 1. DYNAMIC STYLES FOR REVEAL ANIMATIONS AND CURSOR OVERRIDES
@@ -35,17 +35,18 @@
     .loading-screen {
       position: fixed;
       inset: 0;
-      background: #21389A;
-      z-index: 99999;
+      background: #ffffff !important;
+      z-index: 99999 !important;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: opacity 0.5s ease, visibility 0.5s ease;
+      pointer-events: auto !important;
     }
-    .loading-screen.gone {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
+    .loading-screen.gone, .loading-screen.hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
     }
     .loading-logo-container {
       transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
@@ -63,7 +64,7 @@
   }
 
   // 2. RUNTIME INITS AFTER DOM LOADS
-  document.addEventListener('DOMContentLoaded', function() {
+  function initAll() {
     initPreloader();
     initNavbar();
     if (!isTouchDevice()) {
@@ -73,7 +74,13 @@
     initBackToTop();
     initStatsTicker();
     initScrollReveal();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
 
   // ─── A. PRELOADER / LOADING SCREEN ──────────────────────────────────────
   function initPreloader() {
@@ -82,17 +89,18 @@
       loader = document.createElement('div');
       loader.id = 'loadingScreen';
       loader.className = 'loading-screen';
-      
+
       var container = document.createElement('div');
       container.className = 'loading-logo-container';
-      
+
       var img = document.createElement('img');
       img.className = 'loading-logo';
       img.alt = 'Aeronica Logo';
       var relPrefix = getRelativePrefix();
-      img.src = relPrefix + 'Footer Logo.svg';
-      img.style.maxWidth = '240px';
-      
+      img.src = relPrefix + 'Logo.svg';
+      img.style.width = '240px';
+      img.style.height = 'auto';
+
       container.appendChild(img);
       loader.appendChild(container);
       document.body.insertBefore(loader, document.body.firstChild);
@@ -100,23 +108,23 @@
 
     var logoContainer = loader.querySelector('.loading-logo-container');
 
-    setTimeout(function() {
+    setTimeout(function () {
       if (logoContainer) {
         logoContainer.classList.add('logo-exit');
       }
     }, 2000);
 
-    setTimeout(function() {
-      loader.classList.add('gone');
+    setTimeout(function () {
+      loader.classList.add('gone', 'hidden');
       document.body.classList.add('preloader-finished');
     }, 2600);
   }
 
   // ─── B. NAVBAR SCROLL + INTERACTION ─────────────────────────────────────
   function initNavbar() {
-    var navbar   = document.getElementById('navbar');
-    var toggle   = navbar ? navbar.querySelector('.navbar-toggle') : null;
-    var overlay  = document.getElementById('navOverlay');
+    var navbar = document.getElementById('navbar');
+    var toggle = navbar ? navbar.querySelector('.navbar-toggle') : null;
+    var overlay = document.getElementById('navOverlay');
 
     // 1. Scroll → is-scrolled class
     function onScroll() {
@@ -134,7 +142,7 @@
 
     // 2. Mobile hamburger toggle
     if (toggle && overlay && navbar) {
-      toggle.addEventListener('click', function() {
+      toggle.addEventListener('click', function () {
         var isOpen = overlay.classList.toggle('is-open');
         toggle.classList.toggle('is-active', isOpen);
         navbar.classList.toggle('overlay-open', isOpen);
@@ -162,17 +170,17 @@
     // 3. Mobile accordion
     if (overlay) {
       var groupTriggers = Array.from(overlay.querySelectorAll('.nav-overlay-group-trigger'));
-      groupTriggers.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var group    = btn.closest('.nav-overlay-group');
+      groupTriggers.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var group = btn.closest('.nav-overlay-group');
           var sublinks = group ? group.querySelector('.nav-overlay-sublinks') : null;
           if (!sublinks) return;
           var isNowOpen = sublinks.classList.toggle('is-open');
           btn.classList.toggle('is-open', isNowOpen);
           // Close sibling groups
-          groupTriggers.forEach(function(other) {
+          groupTriggers.forEach(function (other) {
             if (other === btn) return;
-            var otherGroup    = other.closest('.nav-overlay-group');
+            var otherGroup = other.closest('.nav-overlay-group');
             var otherSublinks = otherGroup ? otherGroup.querySelector('.nav-overlay-sublinks') : null;
             if (otherSublinks) otherSublinks.classList.remove('is-open');
             other.classList.remove('is-open');
@@ -184,14 +192,14 @@
     // 4. Desktop dropdown hover
     if (navbar) {
       var dropdowns = Array.from(navbar.querySelectorAll('.navbar-dropdown'));
-      dropdowns.forEach(function(dd) {
+      dropdowns.forEach(function (dd) {
         var menu = dd.querySelector('.navbar-dropdown-menu');
         if (!menu) return;
 
-        dd.addEventListener('mouseenter', function() {
+        dd.addEventListener('mouseenter', function () {
           menu.classList.add('is-open');
         });
-        dd.addEventListener('mouseleave', function() {
+        dd.addEventListener('mouseleave', function () {
           menu.classList.remove('is-open');
         });
       });
@@ -241,7 +249,7 @@
     var lastCheck = 0;
     var lastEl = null;
 
-    window.addEventListener('mousemove', function(e) {
+    window.addEventListener('mousemove', function (e) {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     });
@@ -249,7 +257,7 @@
     function getLuminance(r, g, b) {
       return r * 0.299 + g * 0.587 + b * 0.114;
     }
-    
+
     function hasDarkBackground(el) {
       var cs = window.getComputedStyle(el);
       var bgColor = cs.backgroundColor;
@@ -285,7 +293,7 @@
       return false;
     }
 
-    window.addEventListener('mouseover', function(e) {
+    window.addEventListener('mouseover', function (e) {
       var target = e.target;
       var isClickable = target.closest('a, button, [role=button], input, select, textarea, label');
       document.documentElement.classList.toggle('cursor-on-link', !!isClickable);
@@ -348,7 +356,7 @@
       var rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
       var rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
       cancelAnimationFrame(tiltRAF);
-      tiltRAF = requestAnimationFrame(function() {
+      tiltRAF = requestAnimationFrame(function () {
         if (currentCard) {
           currentCard.style.transform = 'perspective(1200px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale3d(1.02, 1.02, 1.02)';
         }
@@ -361,12 +369,12 @@
       currentCard = null;
       document.removeEventListener('mousemove', applyTilt);
       cancelAnimationFrame(tiltRAF);
-      tiltRAF = requestAnimationFrame(function() {
+      tiltRAF = requestAnimationFrame(function () {
         el.style.transform = '';
       });
     }
 
-    document.addEventListener('mouseover', function(e) {
+    document.addEventListener('mouseover', function (e) {
       var card = e.target.closest(TILT_SELECTOR);
       if (card && card !== currentCard) {
         if (currentCard) resetTilt();
@@ -375,7 +383,7 @@
       }
     }, { passive: true });
 
-    document.addEventListener('mouseout', function(e) {
+    document.addEventListener('mouseout', function (e) {
       if (currentCard && !currentCard.contains(e.relatedTarget)) {
         resetTilt();
       }
@@ -398,7 +406,7 @@
       document.body.appendChild(btn);
     }
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       if (window.scrollY > window.innerHeight * 0.5) {
         btn.classList.add('is-visible');
       } else {
@@ -406,7 +414,7 @@
       }
     }, { passive: true });
 
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
@@ -419,7 +427,7 @@
     var elements = Array.from(statsGrid.querySelectorAll('span[style*="font-size"] span, span.stat-count'));
     if (elements.length === 0) {
       var cols = statsGrid.querySelectorAll('.stats-4col > div');
-      cols.forEach(function(col) {
+      cols.forEach(function (col) {
         var numContainer = col.querySelector('span');
         if (numContainer) {
           var txt = numContainer.innerText.trim();
@@ -434,10 +442,10 @@
       });
     }
 
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          elements.forEach(function(el) {
+          elements.forEach(function (el) {
             var target = parseInt(el.getAttribute('data-target') || el.innerText.replace(/[^0-9]/g, ''), 10);
             if (isNaN(target)) return;
             el.setAttribute('data-target', target);
@@ -454,7 +462,7 @@
       var start = 0;
       var duration = 2200;
       var startTime = performance.now();
-      
+
       function update(now) {
         var progress = Math.min((now - startTime) / duration, 1);
         var eased = 1 - Math.pow(1 - progress, 3);
@@ -486,8 +494,8 @@
     ];
 
     var elements = document.querySelectorAll(selectors.join(', '));
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('reveal-active');
           observer.unobserve(entry.target);
@@ -498,7 +506,7 @@
       threshold: 0.1
     });
 
-    elements.forEach(function(el) {
+    elements.forEach(function (el) {
       if (el.classList.contains('reveal-active')) return;
       el.classList.add('scroll-reveal');
       observer.observe(el);
