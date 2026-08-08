@@ -185,25 +185,26 @@ class IndexView(TemplateView):
         context['testimonials'] = [
             {
                 "quote": "Aeronica delivered exceptional precision in their GIS mapping for our railway corridor project. The sub-centimeter accuracy and detailed terrain analysis exceeded our expectations.",
-                "name": "Chief Engineer",
-                "role": "Central Railway",
+                "author": "Chief Engineer",
+                "title": "Central Railway",
             },
             {
-                "quote": "The volumetric analysis from Aeronica's mine survey gave us stockpile numbers we could rely on for planning and reconciliation — far more consistent than our manual methods.",
-                "name": "Survey Head",
-                "role": "JSW Steel",
+                "quote": "The drone spraying service from Aeronica transformed our farming operations. The precision and efficiency of their DGCA-certified Samrudhhi-10L drones reduced our pesticide usage by 30% while improving coverage.",
+                "author": "Farm Operations Head",
+                "title": "BASF India",
             },
             {
-                "quote": "Aeronica's pipeline surveillance drones monitored our right-of-way continuously and flagged anomalies in real time, protecting critical infrastructure with minimal ground patrols.",
-                "name": "Operations Director",
-                "role": "IOCL",
+                "quote": "Aeronica's Unified Surveillance System has been instrumental in securing our pipeline infrastructure. The AI-powered anomaly detection and real-time monitoring capabilities give us unprecedented visibility.",
+                "author": "Safety & Security Director",
+                "title": "IOCL",
             },
             {
-                "quote": "From crop health mapping to spraying operations, Aeronica's agriculture drones have measurably improved how our farmers manage fields and input costs.",
-                "name": "Programme Lead",
-                "role": "Agriculture Department",
+                "quote": "Working with Aeronica on our mine volumetric survey was a fantastic experience. Their drone-based surveying reduced our measurement time from weeks to days, with far greater accuracy.",
+                "author": "Mine Operations Manager",
+                "title": "JSW Steel",
             },
         ]
+        context['testimonials_json'] = json.dumps(context['testimonials'])
         return context
 
 class IndustriesView(TemplateView):

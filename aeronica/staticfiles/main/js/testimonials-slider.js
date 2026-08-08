@@ -24,6 +24,10 @@
     '<circle cx="6" cy="6" r="0.7" fill="#fff" opacity="0.25"></circle></svg>';
 
   var activeIndex = 0;
+  var AUTOPLAY_DELAY = 5000;
+  var timer = null;
+  var visible = true;
+  var hoverPauses = 0;
 
   function render() {
     slides.forEach(function(slide, i) {
@@ -34,8 +38,8 @@
       dot.innerHTML = i === activeIndex ? ACTIVE_DOT_SVG : INACTIVE_DOT_SVG;
     });
     if (data && data[activeIndex]) {
-      if (nameEl) nameEl.textContent = data[activeIndex].name;
-      if (roleEl) roleEl.textContent = data[activeIndex].role;
+      if (nameEl) nameEl.textContent = data[activeIndex].author;
+      if (roleEl) roleEl.textContent = data[activeIndex].title;
     }
   }
 
@@ -53,26 +57,56 @@
     goTo((activeIndex - 1 + slides.length) % slides.length);
   }
 
-  var timer = null;
   function startAuto() {
     stopAuto();
-    timer = setInterval(next, 5000);
+    if (visible && hoverPauses === 0) {
+      timer = setInterval(next, AUTOPLAY_DELAY);
+    }
   }
+
   function stopAuto() {
     if (timer) { clearInterval(timer); timer = null; }
   }
+
+  function pause() {
+    hoverPauses += 1;
+    stopAuto();
+  }
+
+  function unpause() {
+    hoverPauses = Math.max(0, hoverPauses - 1);
+    startAuto();
+  }
+
   function resetAuto() {
     startAuto();
   }
 
   dots.forEach(function(dot, i) {
     dot.addEventListener('click', function() { goTo(i); resetAuto(); });
+    dot.addEventListener('mouseenter', pause);
+    dot.addEventListener('mouseleave', unpause);
   });
-  if (prevBtn) prevBtn.addEventListener('click', function() { prev(); resetAuto(); });
-  if (nextBtn) nextBtn.addEventListener('click', function() { next(); resetAuto(); });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() { prev(); resetAuto(); });
+    prevBtn.addEventListener('mouseenter', pause);
+    prevBtn.addEventListener('mouseleave', unpause);
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() { next(); resetAuto(); });
+    nextBtn.addEventListener('mouseenter', pause);
+    nextBtn.addEventListener('mouseleave', unpause);
+  }
 
-  section.addEventListener('mouseenter', stopAuto);
-  section.addEventListener('mouseleave', startAuto);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        visible = entry.isIntersecting;
+        if (visible) startAuto(); else stopAuto();
+      });
+    }, { threshold: 0.15 });
+    io.observe(section);
+  }
 
   render();
   startAuto();
