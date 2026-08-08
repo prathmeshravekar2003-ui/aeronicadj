@@ -861,7 +861,7 @@ html.modal-open * {
 .loading-screen {
     z-index: -1;
     pointer-events: none;
-    background: 0 0;
+    background: #21389a;
     flex-direction: column;
     justify-content: center;
     align-items: center;

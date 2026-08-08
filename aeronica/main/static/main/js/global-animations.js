@@ -90,7 +90,7 @@
       img.className = 'loading-logo';
       img.alt = 'Aeronica Logo';
       var relPrefix = getRelativePrefix();
-      img.src = relPrefix + 'img/aeronica-logo.png';
+      img.src = relPrefix + 'Footer Logo.svg';
       img.style.maxWidth = '240px';
       
       container.appendChild(img);
