@@ -189,7 +189,7 @@ class IndexView(TemplateView):
                 "title": "Central Railway",
             },
             {
-                "quote": "The drone spraying service from Aeronica transformed our farming operations. The precision and efficiency of their DGCA-certified Samrudhhi-10L drones reduced our pesticide usage by 30% while improving coverage.",
+                "quote": "The drone spraying service from Aeronica transformed our farming operations. The precision and efficiency of their DGCA-certified Samrudhhi-10LH drones reduced our pesticide usage by 30% while improving coverage.",
                 "author": "Farm Operations Head",
                 "title": "BASF India",
             },
