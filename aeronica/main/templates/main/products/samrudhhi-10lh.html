@@ -55,7 +55,8 @@
               href="{% url 'main:home' %}">Home</a><span style="opacity:0.4">/</span><a
               style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s"
               href="{% url 'main:products' %}">Products</a><span style="opacity:0.4">/</span><span
-              style="color:rgba(255,255,255,0.8)">Samrudhhi-10LH</span></nav>
+              style="color:rgba(255,255,255,0.8)">Samrudhhi-10LH</span>
+          </nav>
           <div style="display:flex;align-items:flex-start;gap:1.2rem"><a
               style="display:flex;align-items:center;color:rgba(255,255,255,0.7);margin-top:0.4rem;flex-shrink:0"
               href="{% url 'main:products' %}"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
@@ -135,7 +136,8 @@
               style="background:linear-gradient(135deg, #ffffff00 0%, #ffffff00 100%);border-radius:1.2rem;padding:3rem;display:flex;align-items:center;justify-content:center;min-height:28rem">
               <img alt="Samrudhhi-10LH — Showcase" width="450" height="300" decoding="async"
                 style="width:80%;height:auto;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(255, 255, 255, 0))"
-                src="{% static 'main/images/products/Sam_10LH/SAM_10LH.png' %}" /></div>
+                src="{% static 'main/images/products/Sam_10LH/SAM_10LH.png' %}" />
+            </div>
             <div
               style="position:absolute;top:1.5rem;right:1.5rem;background:#21389A;color:#fff;border-radius:0.4rem;padding:0.6rem 1.2rem;font-size:1.1rem;font-weight:700;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
               DGCA Compliant</div>
@@ -143,68 +145,77 @@
         </div>
         <div style="margin-bottom:5rem">
           <div class="product-showcase-grid">
-            <div
-              style="background:#fff;border:1px solid #e5e5e5;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column">
-              <div style="padding:3rem;display:flex;align-items:center;justify-content:center;flex:1;min-height:22rem">
-                <img alt="Samrudhhi-10LH — Secondary View" loading="lazy" width="350" height="260" decoding="async"
-                  style="width:90%;height:auto;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,0,0,0.15))"
-                  src="{% static 'main/images/products/Sam_10LH/SAM 10LH (front).png' %}" /></div>
-              <div style="padding:2rem 3rem;border-top:1px solid rgba(33,56,154,0.08)"><span
+            <div style="background:#fff;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column">
+              <div style="position:relative">
+                <div
+                  style="background:linear-gradient(135deg, #ffffff00 0%, #ffffff00 100%);border-radius:1.2rem;padding:3rem;display:flex;align-items:center;justify-content:center;min-height:28rem">
+                  <img alt="Samrudhhi-10LH — Showcase" width="450" height="300" decoding="async"
+                    style="width:80%;height:auto;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(255, 255, 255, 0))"
+                    src="{% static 'main/images/products/Sam_10LH/SAM 10LH (front).png' %}" />
+                </div>
+                <div
+                  style="position:absolute;top:1.5rem;right:1.5rem;background:#21389A;color:#fff;border-radius:0.4rem;padding:0.6rem 1.2rem;font-size:1.1rem;font-weight:700;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
+                  Front elevation configuration</div>
+              </div>
+              <!-- <div style="padding:2rem 3rem;border-top:1px solid rgba(33,56,154,0.08)"><span
                   style="font-size:1.2rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em;color:#21389A">Secondary
                   View</span>
                 <p style="font-size:1.35rem;color:#555;margin-top:0.4rem">Front elevation configuration</p>
+              </div> -->
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2rem">
+              <div
+                style="background:#21389A;border-radius:1rem;padding:3.5rem;color:#fff;display:flex;flex-direction:column;justify-content:center">
+                <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-circle-check-big" style="width:3.2rem;height:3.2rem;color:white;flex-shrink:0">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <div>
+                    <div
+                      style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em">
+                      Certified Platform</div>
+                    <h3 style="font-size:2rem;font-weight:700;color:#fff">DGCA Compliant Operations</h3>
+                  </div>
+                </div>
+                <p style="font-size:1.4rem;color:rgba(255,255,255,0.75);line-height:1.7">Aeronica UAVs are engineered
+                  for high-precision, fully compliant missions under India&#x27;s Digital Sky airspace regulations.</p>
+                <div style="margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+                  <div>
+                    <div
+                      style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
+                      Category</div>
+                    <div style="font-size:1.6rem;font-weight:700;color:#fff;margin-top:0.3rem">Medium Category</div>
+                  </div>
+                  <div>
+                    <div
+                      style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
+                      Compliance</div>
+                    <div style="font-size:1.6rem;font-weight:700;color:#fff;margin-top:0.3rem">DGCA Compliant</div>
+                  </div>
+                  <div>
+                    <div
+                      style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
+                      Endurance</div>
+                    <div style="font-size:1.6rem;font-weight:700;color:#fff;margin-top:0.3rem">24 mins</div>
+                  </div>
+                  <div>
+                    <div
+                      style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
+                      MTOW</div>
+                    <div style="font-size:1.6rem;font-weight:700;color:#fff;margin-top:0.3rem">30 Kg</div>
+                  </div>
+                </div>
+              </div>
+              <div style="background:#f5f5f5;border-radius:1rem;padding:3rem;border:1px solid #e5e5e5">
+                <h4 style="font-size:1.6rem;font-weight:600;margin-bottom:1rem;color:#111">Proven Field Performance</h4>
+                <p style="font-size:1.35rem;color:#555;line-height:1.7">Field-proven across thousands of acres in
+                  Maharashtra and Tamil Nadu. Commercial operators report 25+ acres of daily coverage with reduced
+                  turnaround time compared to pure-electric platforms.</p>
               </div>
             </div>
-            <div style="background:#21389A;border-radius:1rem;padding:3.5rem;color:#fff;display:flex;flex-direction:column;justify-content:center">
-              <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-circle-check-big" style="width:3.2rem;height:3.2rem;color:white;flex-shrink:0">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <path d="m9 11 3 3L22 4"></path>
-                </svg>
-                <div>
-                  <div
-                    style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em">
-                    Certified Platform</div>
-                  <h3 style="font-size:2rem;font-weight:700;color:#fff">DGCA Compliant Operations</h3>
-                </div>
-              </div>
-              <p style="font-size:1.4rem;color:rgba(255,255,255,0.75);line-height:1.7">Aeronica UAVs are engineered
-                for high-precision, fully compliant missions under India&#x27;s Digital Sky airspace regulations.</p>
-              <div style="margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
-                <div>
-                  <div
-                    style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
-                    Category</div>
-                  <div style="font-size:1.6rem;font-weight:700;color:#fff;margin-top:0.3rem">Medium Category</div>
-                </div>
-                <div>
-                  <div
-                    style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
-                    Compliance</div>
-                  <div style="font-size:1.6rem;font-weight:700;color:#fff;margin-top:0.3rem">DGCA Compliant</div>
-                </div>
-                <div>
-                  <div
-                    style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
-                    Endurance</div>
-                  <div style="font-size:1.6rem;font-weight:700;color:#fff;margin-top:0.3rem">24 mins</div>
-                </div>
-                <div>
-                  <div
-                    style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
-                    MTOW</div>
-                  <div style="font-size:1.6rem;font-weight:700;color:#fff;margin-top:0.3rem">30 Kg</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="background:#f5f5f5;border-radius:1rem;padding:3rem;border:1px solid #e5e5e5;margin-top:2rem">
-            <h4 style="font-size:1.6rem;font-weight:600;margin-bottom:1rem;color:#111">Proven Field Performance</h4>
-            <p style="font-size:1.35rem;color:#555;line-height:1.7">Field-proven across thousands of acres in
-              Maharashtra and Tamil Nadu. Commercial operators report 25+ acres of daily coverage with reduced
-              turnaround time compared to pure-electric platforms.</p>
           </div>
         </div>
         <div style="margin-bottom:5rem">
@@ -220,7 +231,8 @@
                   <circle cx="12" cy="12" r="10"></circle>
                   <circle cx="12" cy="12" r="6"></circle>
                   <circle cx="12" cy="12" r="2"></circle>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Precision Spray System</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Ensures precise application of crop protection and
                 nutrition solutions.</p>
@@ -235,7 +247,8 @@
                     d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
                   </path>
                   <path d="m9 12 2 2 4-4"></path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Obstacle Sensing</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Recognizes nearby objects to support safe flight.
               </p>
@@ -247,7 +260,8 @@
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                   class="lucide lucide-mountain" style="width:2rem;height:2rem">
                   <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Auto Terrain Tracking</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Keeps the drone at the right height over uneven
                 fields.</p>
@@ -264,7 +278,8 @@
                   <path
                     d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97">
                   </path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Consistent Flow Control</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Regulates liquid output for uniform spraying.</p>
             </div>

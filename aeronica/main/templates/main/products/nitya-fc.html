@@ -55,7 +55,8 @@
               href="{% url 'main:home' %}">Home</a><span style="opacity:0.4">/</span><a
               style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s"
               href="{% url 'main:products' %}">Products</a><span style="opacity:0.4">/</span><span
-              style="color:rgba(255,255,255,0.8)">Nitya FC</span></nav>
+              style="color:rgba(255,255,255,0.8)">Nitya FC</span>
+          </nav>
           <div style="display:flex;align-items:flex-start;gap:1.2rem"><a
               style="display:flex;align-items:center;color:rgba(255,255,255,0.7);margin-top:0.4rem;flex-shrink:0"
               href="{% url 'main:products' %}"><svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
@@ -141,7 +142,8 @@
               style="background:linear-gradient(135deg, #ffffff00 0%, #ffffff00 100%);border-radius:1.2rem;padding:3rem;display:flex;align-items:center;justify-content:center;min-height:28rem">
               <img alt="Nitya FC — Showcase" width="450" height="300" decoding="async"
                 style="width:80%;height:auto;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(255, 255, 255, 0))"
-                src="{% static 'main/images/products/nitya-fc/Nitya FC.png' %}" /></div>
+                src="{% static 'main/images/products/nitya-fc/Nitya FC.png' %}" />
+            </div>
             <div
               style="position:absolute;top:1.5rem;right:1.5rem;background:#21389A;color:#fff;border-radius:0.4rem;padding:0.6rem 1.2rem;font-size:1.1rem;font-weight:700;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
               Used in DGCA Type-Certified Aircraft</div>
@@ -149,18 +151,19 @@
         </div>
         <div style="margin-bottom:5rem">
           <div class="product-showcase-grid">
-            <div
-              style="background:#fff;border:1px solid #e5e5e5;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column">
-              <div style="padding:3rem;display:flex;align-items:center;justify-content:center;flex:1;min-height:22rem">
-                <img alt="Nitya FC — Secondary View" loading="lazy" width="350" height="260" decoding="async"
-                  style="width:90%;height:auto;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(33,56,154,0.15))"
-                  src="{% static 'main/images/products/nitya-fc/Nitya FC.png' %}" /></div>
-              <div style="padding:2rem 3rem;border-top:1px solid rgba(33,56,154,0.08)"><span
-                  style="font-size:1.2rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em;color:#21389A">Secondary
-                  View</span>
-                <p style="font-size:1.35rem;color:#555;margin-top:0.4rem">Bottom layout featuring Make in India insignia
-                </p>
+            <div style="background:#fff;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column">
+              <div style="position:relative">
+                <div
+                  style="background:linear-gradient(135deg, #ffffff00 0%, #ffffff00 100%);border-radius:1.2rem;padding:3rem;display:flex;align-items:center;justify-content:center;min-height:28rem">
+                  <img alt="Flycra 2.0 — Showcase" width="450" height="300" decoding="async"
+                    style="width:90%;height:auto;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(255, 255, 255, 0))"
+                    src="{% static 'main/images/products/nitya-fc/Nitya FC.png' %}" />
+                </div>
+                <div
+                  style="position:absolute;top:1.5rem;right:1.5rem;background:#21389A;color:#fff;border-radius:0.4rem;padding:0.6rem 1.2rem;font-size:1.1rem;font-weight:700;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em">
+                  Bottom layout featuring Make in India insignia</div>
               </div>
+
             </div>
             <div style="display:flex;flex-direction:column;gap:2rem">
               <div style="background:#21389A;border-radius:1rem;padding:3.5rem;color:#fff;flex:1">
@@ -236,7 +239,8 @@
                   <path d="M20 9h2"></path>
                   <path d="M9 2v2"></path>
                   <path d="M9 20v2"></path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">High-Performance Processor</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">480 MHz STM32H7 processor delivers real-time
                 flight control. Built to handle demanding operations without compromise.</p>
@@ -252,7 +256,8 @@
                   </path>
                   <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path>
                   <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Triple-Redundant Safety</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Three independent sensor units work together to
                 ensure accuracy. If one fails, the others keep flying. That&#x27;s the redundancy critical systems need.
@@ -268,7 +273,8 @@
                     d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
                   </path>
                   <path d="m9 12 2 2 4-4"></path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Military-Grade Security</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Dedicated encryption chip protects all data. Your
                 operations stay secure, whether commercial or government.</p>
@@ -282,7 +288,8 @@
                   <circle cx="12" cy="12" r="10"></circle>
                   <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
                   <path d="M2 12h20"></path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Global Positioning</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Supports GPS, GLONASS, Galileo, BeiDou, NavIC, and
                 QZSS. Works reliably anywhere on Earth.</p>
@@ -296,7 +303,8 @@
                   <path
                     d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
                   </path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Multiple Power Options</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Triple redundant power sources with wide voltage
                 support (5V–36V). Flexibility built in.</p>
@@ -311,7 +319,8 @@
                     d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
                   </path>
                   <path d="m9 12 2 2 4-4"></path>
-                </svg></div>
+                </svg>
+              </div>
               <h3 style="font-size:1.7rem;font-weight:600;margin-bottom:0.8rem">Always Safe</h3>
               <p style="font-size:1.35rem;color:#555;line-height:1.6">Real-time OS with automatic failsafes. Keeps
                 flying even when things go wrong.</p>
