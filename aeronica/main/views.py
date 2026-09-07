@@ -114,6 +114,13 @@ class IndexView(TemplateView):
                 "ctaLabel": "Learn More",
                 "ctaHref": reverse('main:products-uday-16'),
             },
+            {
+                "image": resolve_static('main/images/Website Hero Images/Nitya FC.png'),
+                "title": "Nitya FC",
+                "description": "An indigenous flight controller delivering unprecedented stability and seamless interoperability with Aeronica's AI analytics platforms. Built for reliability across all flight conditions.",
+                "ctaLabel": "Learn More",
+                "ctaHref": reverse('main:products-nitya-fc'),
+            },
         ])
         context['product_slides'] = [
             {
@@ -133,7 +140,7 @@ class IndexView(TemplateView):
                 "title": "Flycra 2.4",
                 "tagline": "Mapping",
                 "slug": "flycra-20",
-                "description": "A high-performance mapping drone that delivers sub-centimeter accuracy. Ideal for GIS surveys, construction monitoring, and infrastructure inspection.",
+                "description": "The Flycra 2.4 is Aeronica's precision survey and mapping drone. A compact, high-endurance UAV designed for GIS surveys, Inspection, and large-area volumetric analysis.",
                 "image": resolve_static('main/images/products/Flycra 2.0/Flycra 2.0 (front view).png'),
                 "href": reverse('main:products-flycra-20'),
                 "specs": [
