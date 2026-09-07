@@ -1,4 +1,4 @@
-﻿(function() {
+(function() {
   var heroSection = document.getElementById('hero');
   if (!heroSection) return;
 

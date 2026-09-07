@@ -90,13 +90,13 @@ class IndexView(TemplateView):
                 "image": resolve_static('main/images/Hero-Section/Sam 10LH website image 2.png'),
                 "title": "Samrudhhi 10LH",
                 "description": "Improve farm productivity with the Samrudhhi-10LH agriculture spraying drone. Designed for efficient pesticide and nutrient application across different crops.",
-                "ctaLabel": "Get in Touch",
-                "ctaHref": reverse('main:contact'),
+                "ctaLabel": "Learn More",
+                "ctaHref": reverse('main:products-samrudhhi-10lh'),
             },
             {
                 "image": resolve_static('main/images/Website Hero Images/Flycra 2.0 Hero img.png'),
-                "title": "Flycra 2.0",
-                "description": "Flycra 2.0 helps capture accurate aerial data for mapping, inspections, surveying, and surveillance across industrial and commercial projects.",
+                "title": "Flycra 2.4",
+                "description": "Flycra 2.4 helps capture accurate aerial data for mapping, inspections, surveying, and surveillance across industrial and commercial projects.",
                 "ctaLabel": "View Products",
                 "ctaHref": reverse('main:products-flycra-20'),
             },
@@ -111,8 +111,8 @@ class IndexView(TemplateView):
                 "image": resolve_static('main/images/Website Hero Images/Uday 1.6 (2).png'),
                 "title": "Uday 1.6",
                 "description": "UDAY 1.6 compact surveillance and intelligent drone. High-resolution aerial imaging and coverage for defence operations, border security, and infrastructure assessment.",
-                "ctaLabel": "Contact Us",
-                "ctaHref": reverse('main:contact'),
+                "ctaLabel": "Learn More",
+                "ctaHref": reverse('main:products-uday-16'),
             },
         ])
         context['product_slides'] = [
@@ -130,7 +130,7 @@ class IndexView(TemplateView):
                 ],
             },
             {
-                "title": "Flycra 2.0",
+                "title": "Flycra 2.4",
                 "tagline": "Mapping",
                 "slug": "flycra-20",
                 "description": "A high-performance mapping drone that delivers sub-centimeter accuracy. Ideal for GIS surveys, construction monitoring, and infrastructure inspection.",
@@ -800,3 +800,6 @@ class SolutionsGisGeospatialIntelligenceView(TemplateView):
 
 class SolutionsInfrastructureInspectionView(TemplateView):
     template_name = 'main/solutions/infrastructure-inspection.html'
+
+class SolutionsMultispectralScanningView(TemplateView):
+    template_name = 'main/solutions/multispectral-scanning.html'

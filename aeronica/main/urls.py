@@ -226,4 +226,5 @@ urlpatterns = [
     path('solutions/drone-survey-mapping/', views.SolutionsDroneSurveyMappingView.as_view(), name='solutions-drone-survey-mapping'),
     path('solutions/gis-geospatial-intelligence/', views.SolutionsGisGeospatialIntelligenceView.as_view(), name='solutions-gis-geospatial-intelligence'),
     path('solutions/infrastructure-inspection/', views.SolutionsInfrastructureInspectionView.as_view(), name='solutions-infrastructure-inspection'),
+    path('solutions/multispectral-scanning/', views.SolutionsMultispectralScanningView.as_view(), name='solutions-multispectral-scanning'),
 ]
