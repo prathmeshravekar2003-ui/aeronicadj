@@ -141,6 +141,13 @@ class IndexView(TemplateView):
                 "ctaLabel": "Learn More",
                 "ctaHref": reverse('main:products-nitya-fc'),
             },
+            {
+                "image": resolve_static('main/images/Website Hero Images/USS Hero page..png'),
+                "title": "Unified Surveillance System",
+                "description": "Smart AI-driven drone surveillance that adapts to your needs with live AI stream detection, real-time alerts, and video cloud management.",
+                "ctaLabel": "Learn More",
+                "ctaHref": reverse('main:solutions-unified-surveillance-system'),
+            },
         ])
         context['product_slides'] = [
             {
@@ -881,3 +888,6 @@ class SolutionsInfrastructureInspectionView(TemplateView):
 
 class SolutionsMultispectralScanningView(TemplateView):
     template_name = 'main/solutions/multispectral-scanning.html'
+
+class SolutionsUnifiedSurveillanceSystemView(TemplateView):
+    template_name = 'main/solutions/unified-surveillance-system.html'
