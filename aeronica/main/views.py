@@ -1,10 +1,16 @@
 import json
+import logging
 
 from django.urls import reverse
 from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.templatetags.static import static as resolve_static
+from django.core.cache import cache
+
+from .models import CaseStudy, BlogPost
+
+logger = logging.getLogger(__name__)
 
 
 # ── Error pages ──────────────────────────────────────────────────────────────
@@ -40,6 +46,20 @@ class AboutWhyAeronicaView(TemplateView):
 
 class CaseStudiesView(TemplateView):
     template_name = 'main/case-studies.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Try cache first, fallback to DB, fallback to empty list (static content still shows)
+        try:
+            db_case_studies = cache.get('case_studies_all')
+            if db_case_studies is None:
+                db_case_studies = list(CaseStudy.objects.filter(is_published=True).order_by('order', '-date'))
+                cache.set('case_studies_all', db_case_studies, 60 * 60 * 24)
+        except Exception as e:
+            logger.warning(f'CaseStudy cache/DB error: {e}')
+            db_case_studies = []
+        context['db_case_studies'] = db_case_studies
+        return context
 
 class CaseStudiesAgricultureProjectsView(TemplateView):
     template_name = 'main/case-studies/agriculture-projects.html'
@@ -294,6 +314,57 @@ class ResourcesView(TemplateView):
 
 class ResourcesBlogView(TemplateView):
     template_name = 'main/resources/blog.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            db_blog_posts = cache.get('blog_posts_all')
+            if db_blog_posts is None:
+                db_blog_posts = list(BlogPost.objects.filter(is_published=True).order_by('order', '-created_at'))
+                cache.set('blog_posts_all', db_blog_posts, 60 * 60 * 24)
+        except Exception as e:
+            logger.warning(f'BlogPost cache/DB error: {e}')
+            db_blog_posts = []
+        context['db_blog_posts'] = db_blog_posts
+        return context
+
+
+class CaseStudyDetailView(TemplateView):
+    template_name = 'main/case-studies/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        slug = kwargs.get('slug')
+        cache_key = f'case_study_detail_{slug}'
+        try:
+            case_study = cache.get(cache_key)
+            if case_study is None:
+                case_study = CaseStudy.objects.get(slug=slug, is_published=True)
+                cache.set(cache_key, case_study, 60 * 60 * 24)
+        except Exception as e:
+            logger.warning(f'CaseStudyDetail cache/DB error: {e}')
+            case_study = None
+        context['case_study'] = case_study
+        return context
+
+
+class BlogPostDetailView(TemplateView):
+    template_name = 'main/resources/blog/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        slug = kwargs.get('slug')
+        cache_key = f'blog_post_detail_{slug}'
+        try:
+            post = cache.get(cache_key)
+            if post is None:
+                post = BlogPost.objects.get(slug=slug, is_published=True)
+                cache.set(cache_key, post, 60 * 60 * 24)
+        except Exception as e:
+            logger.warning(f'BlogPostDetail cache/DB error: {e}')
+            post = None
+        context['post'] = post
+        return context
 
 class ResourcesBlogAeronicaReceivesDgcaTypeCertificationForSamrudhhi10lView(TemplateView):
     template_name = 'main/resources/blog/aeronica-receives-dgca-type-certification-for-samrudhhi-10l.html'

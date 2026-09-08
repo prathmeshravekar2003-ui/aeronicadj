@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{% if case_study %}{{ case_study.title }}{% else %}Case Study{% endif %} — Aeronica</title>
+  <meta name="description" content="{% if case_study %}{{ case_study.summary|truncatewords:25 }}{% else %}Aeronica Case Study{% endif %}"/>
+  <link rel="icon" href="{% static 'main/Favicon.svg' %}"/>
+  <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/components.css' %}">
+</head>
+<body>
+  <div class="film-grain"></div>
+  {% include "main/includes/navbar.html" %}
+  <main>
+    <div class="case-studies-hub-wrapper" style="padding-top:0;padding-bottom:0;color:#1a1a1a">
+      <section class="page-hero" style="position:relative">
+        <div style="position:absolute;inset:0;background:#21389A;z-index:0"></div>
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 70%);z-index:1"></div>
+        <div style="position:relative;z-index:2;padding:180px var(--section-px) 80px;max-width:160rem;margin:0 auto">
+          <nav style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2.5rem;font-size:1.3rem;color:rgba(255,255,255,0.7);font-family:var(--font-mono)">
+            <a style="color:rgba(255,255,255,0.7);text-decoration:none;" href="{% url 'main:home' %}">Home</a>
+            <span style="opacity:0.4">/</span>
+            <a style="color:rgba(255,255,255,0.7);text-decoration:none;" href="{% url 'main:case-studies' %}">Case Studies</a>
+            <span style="opacity:0.4">/</span>
+            <span style="color:rgba(255,255,255,0.8)">{% if case_study %}{{ case_study.title }}{% else %}Not Found{% endif %}</span>
+          </nav>
+          {% if case_study %}
+            <div style="display:inline-block;padding:0.4rem 1.2rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:2rem;font-size:1.2rem;font-weight:600;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.05em">
+              {{ case_study.category }}
+            </div>
+            <h1 style="font-size:clamp(3rem, 5vw, 6rem);font-weight:700;letter-spacing:-0.04em;color:#fff;line-height:1.15;margin-bottom:2rem;max-width:90rem">
+              {{ case_study.title }}
+            </h1>
+            {% if case_study.client %}
+              <p style="font-size:1.6rem;color:rgba(255,255,255,0.8);margin-bottom:1rem">
+                <strong>Client / Partner:</strong> {{ case_study.client }} {% if case_study.location %} | {{ case_study.location }}{% endif %}
+              </p>
+            {% endif %}
+          {% else %}
+            <h1 style="font-size:3.6rem;color:#fff;">Case Study Not Found</h1>
+          {% endif %}
+        </div>
+      </section>
+
+      <section class="section-py" style="max-width:110rem;margin:0 auto;padding:6rem var(--section-px)">
+        {% if case_study %}
+          {% if case_study.metrics %}
+            <div style="background:#f4f6fa;border-left:4px solid #21389A;padding:2rem 2.5rem;border-radius:0.4rem;margin-bottom:4rem">
+              <h3 style="font-size:1.6rem;font-weight:700;color:#21389A;margin-bottom:0.5rem">Key Metrics &amp; Impact</h3>
+              <p style="font-size:1.5rem;color:#333;line-height:1.6">{{ case_study.metrics }}</p>
+            </div>
+          {% endif %}
+
+          <div style="font-size:1.6rem;line-height:1.8;color:#333">
+            {{ case_study.content|linebreaks }}
+          </div>
+        {% else %}
+          <p style="font-size:1.6rem;color:#666">The requested case study could not be found or is not published yet.</p>
+        {% endif %}
+
+        <div style="margin-top:6rem;padding-top:3rem;border-top:1px solid #eee">
+          <a href="{% url 'main:case-studies' %}" style="display:inline-flex;align-items:center;gap:0.6rem;font-size:1.4rem;font-weight:600;color:#21389A;text-decoration:none">
+            &larr; Back to Case Studies
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+  {% include "main/includes/footer.html" %}
+  <script src="{% static 'main/js/global-animations.js' %}" defer></script>
+</body>
+</html>

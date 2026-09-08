@@ -17,6 +17,13 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# Load .env file if available
+try:
+    from dotenv import load_dotenv
+    load_dotenv(BASE_DIR / '.env')
+except ImportError:
+    pass
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -28,7 +35,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'False'
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,15 +90,62 @@ TEMPLATES = [
 WSGI_APPLICATION = 'aeronica.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# Database Configuration
+# Uses Neon PostgreSQL if DATABASE_URL is set in environment/.env, otherwise SQLite
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    try:
+        import dj_database_url
+        DATABASES = {'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)}
+    except ImportError:
+        from urllib.parse import urlparse
+        url = urlparse(DATABASE_URL)
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': url.path.lstrip('/'),
+                'USER': url.username,
+                'PASSWORD': url.password,
+                'HOST': url.hostname,
+                'PORT': url.port or 5432,
+            }
+        }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+
+
+# Cache Configuration
+# Uses Upstash Redis if REDIS_URL is set in environment/.env, otherwise LocMemCache
+REDIS_URL = os.environ.get('REDIS_URL')
+if REDIS_URL:
+    # Ensure ssl_cert_reqs=none parameter if using SSL (rediss://)
+    redis_location = REDIS_URL
+    if redis_location.startswith('rediss://') and 'ssl_cert_reqs' not in redis_location:
+        redis_location += ('&' if '?' in redis_location else '?') + 'ssl_cert_reqs=none'
+
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+            'LOCATION': redis_location,
+            'TIMEOUT': 60 * 60 * 24,
+        }
+    }
+else:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'LOCATION': 'aeronica-cache',
+            'TIMEOUT': 60 * 60 * 24,
+            'OPTIONS': {
+                'MAX_ENTRIES': 1000
+            }
+        }
+    }
 
 
 # Password validation

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{% if post %}{{ post.title }}{% else %}Blog Post{% endif %} — Aeronica</title>
+  <meta name="description" content="{% if post %}{{ post.excerpt|truncatewords:25 }}{% else %}Aeronica Blog Post{% endif %}"/>
+  <link rel="icon" href="{% static 'main/Favicon.svg' %}"/>
+  <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/components.css' %}">
+</head>
+<body>
+  <div class="film-grain"></div>
+  {% include "main/includes/navbar.html" %}
+  <main>
+    <div style="color:#1a1a1a">
+      <section class="page-hero" style="position:relative">
+        <div style="position:absolute;inset:0;background:#21389A;z-index:0"></div>
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 70%);z-index:1"></div>
+        <div style="position:relative;z-index:2;padding:160px var(--section-px) 70px;max-width:160rem;margin:0 auto">
+          <nav style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2.5rem;font-size:1.3rem;color:rgba(255,255,255,0.7);font-family:var(--font-mono)">
+            <a style="color:rgba(255,255,255,0.7);text-decoration:none;" href="{% url 'main:home' %}">Home</a>
+            <span style="opacity:0.4">/</span>
+            <a style="color:rgba(255,255,255,0.7);text-decoration:none;" href="{% url 'main:resources' %}">Resources</a>
+            <span style="opacity:0.4">/</span>
+            <a style="color:rgba(255,255,255,0.7);text-decoration:none;" href="{% url 'main:resources-blog' %}">Blog</a>
+            <span style="opacity:0.4">/</span>
+            <span style="color:rgba(255,255,255,0.8)">{% if post %}{{ post.title }}{% else %}Not Found{% endif %}</span>
+          </nav>
+          {% if post %}
+            <div style="display:inline-block;padding:0.4rem 1.2rem;background:rgba(255,255,255,0.15);color:#fff;border-radius:2rem;font-size:1.2rem;font-weight:600;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.05em">
+              {{ post.category }}
+            </div>
+            <h1 style="font-size:clamp(2.8rem, 4.5vw, 5.5rem);font-weight:700;letter-spacing:-0.04em;color:#fff;line-height:1.15;margin-bottom:2rem;max-width:90rem">
+              {{ post.title }}
+            </h1>
+            <p style="font-size:1.4rem;color:rgba(255,255,255,0.7);margin-bottom:1rem">
+              By {{ post.author }} | {{ post.published_at|date:"F d, Y" }} &bull; {{ post.read_time }} min read
+            </p>
+          {% else %}
+            <h1 style="font-size:3.6rem;color:#fff;">Blog Post Not Found</h1>
+          {% endif %}
+        </div>
+      </section>
+
+      <section class="section-py" style="max-width:100rem;margin:0 auto;padding:6rem var(--section-px)">
+        {% if post %}
+          <div style="font-size:1.6rem;line-height:1.8;color:#333">
+            {{ post.content|linebreaks }}
+          </div>
+        {% else %}
+          <p style="font-size:1.6rem;color:#666">The requested blog post could not be found or is not published yet.</p>
+        {% endif %}
+
+        <div style="margin-top:6rem;padding-top:3rem;border-top:1px solid #eee">
+          <a href="{% url 'main:resources-blog' %}" style="display:inline-flex;align-items:center;gap:0.6rem;font-size:1.4rem;font-weight:600;color:#21389A;text-decoration:none">
+            &larr; Back to Blog
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+  {% include "main/includes/footer.html" %}
+  <script src="{% static 'main/js/global-animations.js' %}" defer></script>
+</body>
+</html>
