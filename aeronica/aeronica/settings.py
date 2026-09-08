@@ -39,6 +39,16 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.vercel.app',
+    'https://*.now.sh',
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+]
+VERCEL_URL = os.environ.get('VERCEL_URL')
+if VERCEL_URL:
+    CSRF_TRUSTED_ORIGINS.append(f"https://{VERCEL_URL}")
+
 # Security settings for production (when DEBUG=False)
 if not DEBUG:
     CSRF_COOKIE_SECURE = True
